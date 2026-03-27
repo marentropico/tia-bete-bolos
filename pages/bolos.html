@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Bolos artesanais da Tia Bete — simples, recheados e de festa. Encomende pelo WhatsApp!"/>
+  <title>Bolos | Tia Bete Bolos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/variables.css"/>
+  <link rel="stylesheet" href="../css/reset.css"/>
+  <link rel="stylesheet" href="../css/global.css"/>
+  <link rel="stylesheet" href="../css/components.css"/>
+  <link rel="stylesheet" href="../css/animations.css"/>
+  <link rel="stylesheet" href="../css/catalog.css"/>
+</head>
+<body>
+
+  <nav class="nav" id="nav" role="navigation" aria-label="Menu principal">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <img src="../assets/images/logo/logo.png" alt="Logo Tia Bete Bolos" class="nav__logo-img" width="48" height="48"/>
+        <div class="nav__logo-text">
+          <span class="nav__logo-name">Tia Bete Bolos</span>
+          <span class="nav__logo-subtitle">Confeitaria Artesanal</span>
+        </div>
+      </a>
+      <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">
+        <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
+      </button>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="../index.html" class="nav__link">Início</a></li>
+        <li><a href="bolos.html" class="nav__link active">Bolos</a></li>
+        <li><a href="doces.html" class="nav__link">Doces</a></li>
+        <li><a href="salgados.html" class="nav__link">Salgados</a></li>
+        <li><a href="sobre.html" class="nav__link">Nossa História</a></li>
+        <li><a href="contato.html" class="nav__link">Contato</a></li>
+        <li><a href="chocolateria.html" class="nav__link nav__link--highlight">🍫 Páscoa 2026</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="nav-spacer"></div>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="catalog-hero" aria-label="Bolos artesanais">
+      <div class="container">
+        <span class="catalog-hero__eyebrow">✦ Feitos com amor · Desde 2000</span>
+        <h1 class="catalog-hero__title">Nossos <em>Bolos</em></h1>
+        <p class="catalog-hero__desc">Bolos simples do dia a dia, recheados especiais e bolos de festa com decoração personalizada. Encomende o seu!</p>
+      </div>
+    </section>
+
+    <!-- FILTROS -->
+    <div class="catalog-filters" role="navigation" aria-label="Filtrar por categoria">
+      <div class="container catalog-filters__inner">
+        <button class="catalog-filter-btn is-active" data-filter="todos">Todos</button>
+        <button class="catalog-filter-btn" data-filter="simples">🍰 Bolos Simples</button>
+        <button class="catalog-filter-btn" data-filter="recheados">🎂 Bolos Recheados</button>
+        <button class="catalog-filter-btn" data-filter="festa">🎉 Bolos de Festa</button>
+      </div>
+    </div>
+
+    <!-- CONTEÚDO -->
+    <div class="container" style="padding-top: var(--space-8); padding-bottom: var(--space-24);">
+
+      <!-- BOLOS SIMPLES -->
+      <section class="catalog-section" data-category="simples" aria-labelledby="cat-simples">
+        <div class="catalog-section__header">
+          <h2 class="catalog-section__title" id="cat-simples">Bolos <em>Simples</em></h2>
+          <span class="catalog-section__count">6 produtos</span>
+        </div>
+        <div class="catalog-grid">
+
+          <article class="pcard" data-reveal>
+            <a href="produto.html?id=bolo-fuba&cat=bolos" class="pcard__img-link" aria-label="Ver Bolo de Fubá">
+              <div class="pcard__placeholder"><span class="pcard__placeholder-icon">🌽</span><span class="pcard__placeholder-text">foto em breve</span></div>
+              <span class="pcard__badge">Simples</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">Bolo de Fubá</h3>
+              <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20um%20Bolo%20de%20Fubá!%20🌽" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
+            </div>
+          </article>
+
+          <article class="pcard" data-reveal data-reveal-delay="1">
+            <a href="produto.html?id=bolo-milho&cat=bolos" class="pcard__img-link" aria-label="Ver Bolo de Milho">
+              <div class="pcard__placeholder"><span class="pcard__placeholder-icon">🌽</span><span class="pcard__placeholder-text">foto em breve</span></div>
+              <span class="pcard__badge">Simples</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">Bolo de Milho</h3>
+              <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20um%20Bolo%20de%20Milho!" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
+            </div>
+          </article>
+
+          <article class="pcard" data-reveal data-reveal-delay="2">
+            <a href="produto.html?id=bolo-chocolate-simples&cat=bolos" class="pcard__img-link" aria-label="Ver Bolo de Chocolate">
+              <div class="pcard__placeholder"><span class="pcard__placeholder-icon">🍫</span><span class="pcard__placeholder-text">foto em breve</span></div>
+              <span class="pcard__badge">Simples</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">Bolo de Chocolate</h3>
+              <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20um%20Bolo%20de%20Chocolate%20simples!" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
+            </div>
+          </article>
+
+          <article class="pcard" data-reveal data-reveal-delay="3">
+            <a href="produto.html?id=bolo-cenoura&cat=bolos" class="pcard__img-link" aria-label="Ver Bolo de Cenoura">
+              <div class="pcard__placeholder"><span class="pcard__placeholder-icon">🥕</span><span class="pcard__placeholder-text">foto em breve</span></div>
+              <span class="pcard__badge">Simples</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">Bolo de Cenoura</h3>
+              <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20um%20Bolo%20de%20Cenoura!" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
+            </div>
+          </article>
+
+          <article class="pcard" data-reveal>
+            <a href="produto.html?id=bolo-laranja&cat=bolos" class="pcard__img-link" aria-label="Ver Bolo de Laranja">
+              <div class="pcard__placeholder"><span class="pcard__placeholder-icon">🍊</span><span class="pcard__placeholder-text">foto em breve</span></div>
+              <span class="pcard__badge">Simples</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">Bolo de Laranja</h3>
+              <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20um%20Bolo%20de%20Laranja!" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
+            </div>
+          </article>
+
+          <article class="pcard" data-reveal data-reveal-delay="1">
+            <a href="produto.html?id=bolo-limao&cat=bolos" class="pcard__img-link" aria-label="Ver Bolo de Limão">
+              <div class="pcard__placeholder"><span class="pcard__placeholder-icon">🍋</span><span class="pcard__placeholder-text">foto em breve</span></div>
+              <span class="pcard__badge">Simples</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">Bolo de Limão</h3>
+              <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20um%20Bolo%20de%20Limão!" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- BOLOS RECHEADOS -->
+      <section class="catalog-section" data-category="recheados" aria-labelledby="cat-recheados">
+        <div class="catalog-section__header">
+          <h2 class="catalog-section__title" id="cat-recheados">Bolos <em>Recheados</em></h2>
+          <span class="catalog-section__count">8 produtos</span>
+        </div>
+        <div class="catalog-grid">
+
+          <article class="pcard" data-reveal>
+            <a href="produto.html?id=bolo-brigadeiro&cat=bolos" class="pcard__img-link">
+              <div class="pcard__placeholder"><span class="pcard__placeholder-icon">🍫</span><span class="pcard__placeholder-text">foto em breve</span></div>
+              <span class="pcard__badge">Recheado</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">Bolo de Brigadeiro</h3>
+              <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20um%20Bolo%20de%20Brigadeiro!" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
+            </div>
+          </article>
+
+          <article class="pcard" data-reveal data-reveal-delay="1">
+            <a href="produto.html?id=bolo-ninho-morango&cat=bolos" class="pcard__img-link">
+              <div class="pcard__placeholder"><span class="pcard__placeholder-icon">🍓</span><span class="pcard__placeholder-text">foto em breve</span></div>
+              <span class="pcard__badge">Recheado</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">Bolo Ninho com Morango</h3>
+              <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20um%20Bolo%20Ninho%20com%20Morango!" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
+            </div>
+          </article>
+
+          <article class="pcard" data-reveal data-reveal-delay="2">
+            <a href="produto.html?id=bolo-floresta-negra&cat=bolos" class="pcard__img-link">
+              <div class="pcard__placeholder"><span class="pcard__placeholder-icon">🍒</span><span class="pcard__placeholder-text">foto em breve</span></div>
+              <span class="pcard__badge">Recheado</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">Floresta Negra</h3>
+              <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20um%20Bolo%20Floresta%20Negra!" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
+            </div>
+          </article>
+
+          <article class="pcard" data-reveal data-reveal-delay="3">
+            <a href="produto.html?id=bolo-cenoura-chocolate&cat=bolos" class="pcard__img-link">
+              <div class="pcard__placeholder"><span class="pcard__placeholder-icon">🥕</span><span class="pcard__placeholder-text">foto em breve</span></div>
+              <span class="pcard__badge">Recheado</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">Cenoura com Cobertura de Chocolate</h3>
+              <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20Bolo%20de%20Cenoura%20com%20Chocolate!" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
+            </div>
+          </article>
+
+          <article class="pcard" data-reveal>
+            <a href="produto.html?id=bolo-mousse-maracuja&cat=bolos" class="pcard__img-link">
+              <div class="pcard__placeholder"><span class="pcard__placeholder-icon">🌼</span><span class="pcard__placeholder-text">foto em breve</span></div>
+              <span class="pcard__badge">Recheado</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">Mousse de Maracujá</h3>
+              <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20Bolo%20Mousse%20de%20Maracujá!" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
+            </div>
+          </article>
+
+          <article class="pcard" data-reveal data-reveal-delay="1">
+            <a href="produto.html?id=bolo-prestígio&cat=bolos" class="pcard__img-link">
+              <div class="pcard__placeholder"><span class="pcard__placeholder-icon">🥥</span><span class="pcard__placeholder-text">foto em breve</span></div>
+              <span class="pcard__badge">Recheado</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">Bolo Prestígio</h3>
+              <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20um%20Bolo%20Prestígio!" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
+            </div>
+          </article>
+
+          <article class="pcard" data-reveal data-reveal-delay="2">
+            <a href="produto.html?id=bolo-doce-leite&cat=bolos" class="pcard__img-link">
+              <div class="pcard__placeholder"><span class="pcard__placeholder-icon">🍮</span><span class="pcard__placeholder-text">foto em breve</span></div>
+              <span class="pcard__badge">Recheado</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">Bolo de Doce de Leite</h3>
+              <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20Bolo%20de%20Doce%20de%20Leite!" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
+            </div>
+          </article>
+
+          <article class="pcard" data-reveal data-reveal-delay="3">
+            <a href="produto.html?id=bolo-limao-merengue&cat=bolos" class="pcard__img-link">
+              <div class="pcard__placeholder"><span class="pcard__placeholder-icon">🍋</span><span class="pcard__placeholder-text">foto em breve</span></div>
+              <span class="pcard__badge">Recheado</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">Limão com Merengue</h3>
+              <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20Bolo%20de%20Limão%20com%20Merengue!" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- BOLOS DE FESTA -->
+      <section class="catalog-section" data-category="festa" aria-labelledby="cat-festa">
+        <div class="catalog-section__header">
+          <h2 class="catalog-section__title" id="cat-festa">Bolos de <em>Festa</em></h2>
+          <span class="catalog-section__count">Sob encomenda</span>
+        </div>
+        <div class="catalog-grid">
+
+          <article class="pcard" data-reveal>
+            <a href="produto.html?id=bolo-festa-1andar&cat=bolos" class="pcard__img-link">
+              <div class="pcard__placeholder"><span class="pcard__placeholder-icon">🎂</span><span class="pcard__placeholder-text">foto em breve</span></div>
+              <span class="pcard__badge">Festa</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">Bolo de Festa 1 Andar</h3>
+              <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20um%20Bolo%20de%20Festa%201%20Andar!%20🎂%20Pode%20me%20contar%20mais?" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
+            </div>
+          </article>
+
+          <article class="pcard" data-reveal data-reveal-delay="1">
+            <a href="produto.html?id=bolo-festa-2andares&cat=bolos" class="pcard__img-link">
+              <div class="pcard__placeholder"><span class="pcard__placeholder-icon">🎉</span><span class="pcard__placeholder-text">foto em breve</span></div>
+              <span class="pcard__badge">Festa</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">Bolo de Festa 2 Andares</h3>
+              <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20um%20Bolo%20de%20Festa%202%20Andares!%20🎉" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
+            </div>
+          </article>
+
+          <article class="pcard" data-reveal data-reveal-delay="2">
+            <a href="produto.html?id=bolo-debutante&cat=bolos" class="pcard__img-link">
+              <div class="pcard__placeholder"><span class="pcard__placeholder-icon">👑</span><span class="pcard__placeholder-text">foto em breve</span></div>
+              <span class="pcard__badge">Festa</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">Bolo de Debutante</h3>
+              <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20um%20Bolo%20de%20Debutante!%20👑" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
+            </div>
+          </article>
+
+          <article class="pcard" data-reveal data-reveal-delay="3">
+            <a href="produto.html?id=bolo-tematico&cat=bolos" class="pcard__img-link">
+              <div class="pcard__placeholder"><span class="pcard__placeholder-icon">🦄</span><span class="pcard__placeholder-text">foto em breve</span></div>
+              <span class="pcard__badge">Festa</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">Bolo Temático Personalizado</h3>
+              <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20um%20Bolo%20Temático!%20Pode%20me%20contar%20mais%20sobre%20as%20opções?" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </div><!-- /container -->
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="../index.html" class="footer__logo">
+            <img src="../assets/images/logo/logo.png" alt="Tia Bete Bolos" class="footer__logo-img" width="56" height="56"/>
+            <span class="footer__logo-name">Tia Bete Bolos</span>
+          </a>
+          <p class="footer__tagline">Confeitaria artesanal com mais de 20 anos de história.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Instagram"><span>📷</span></a>
+            <a href="#" class="footer__social-link" aria-label="Facebook"><span>👍</span></a>
+            <a href="https://wa.me/5511972710172" class="footer__social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><span>💬</span></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__col-title">Produtos</h3>
+          <ul class="footer__links" role="list">
+            <li><a href="chocolateria.html" class="footer__link">🍫 Páscoa 2026</a></li>
+            <li><a href="bolos.html" class="footer__link">Bolos</a></li>
+            <li><a href="salgados.html" class="footer__link">Salgados</a></li>
+            <li><a href="doces.html" class="footer__link">Doces</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__col-title">A Loja</h3>
+          <ul class="footer__links" role="list">
+            <li><a href="sobre.html" class="footer__link">Nossa História</a></li>
+            <li><a href="contato.html" class="footer__link">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__col-title">Contato</h3>
+          <div class="footer__contact-item"><span class="footer__contact-icon">📞</span><span>(11) 97271-0172</span></div>
+          <div class="footer__contact-item"><span class="footer__contact-icon">📍</span><span>São Paulo, SP</span></div>
+          <a href="https://wa.me/5511972710172?text=Olá,%20quero%20fazer%20um%20pedido!" class="footer__whatsapp-btn" target="_blank" rel="noopener noreferrer">💬 Pedir pelo WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Tia Bete Bolos. Todos os direitos reservados.</span>
+        <span>Feito com <span class="footer__bottom-heart">♥</span> para adoçar sua vida</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20um%20bolo!" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Encomendar pelo WhatsApp">💬</a>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/whatsapp.js"></script>
+  <script src="../js/catalog.js"></script>
+</body>
+</html>

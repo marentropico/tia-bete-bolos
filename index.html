@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tia Bete Bolos — Confeitaria artesanal com mais de 20 anos de história. Bolos, doces e chocolateria especial para Páscoa em São Paulo." />
+  <title>Tia Bete Bolos — Confeitaria Artesanal</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS (ordem importa: variables → reset → global → home) -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+  <!-- ======================================================
+       NAVEGAÇÃO
+       ====================================================== -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Menu principal">
+    <div class="container nav__inner">
+
+      <a href="index.html" class="nav__logo" aria-label="Tia Bete Bolos — Início">
+        <img
+          src="assets/images/logo/logo.png"
+          alt="Logo Tia Bete Bolos"
+          class="nav__logo-img"
+          width="48" height="48"
+        />
+        <div class="nav__logo-text">
+          <span class="nav__logo-name">Tia Bete Bolos</span>
+          <span class="nav__logo-subtitle">Confeitaria Artesanal</span>
+        </div>
+      </a>
+
+      <button
+        class="nav__toggle"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="nav-links"
+        aria-label="Abrir menu"
+      >
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="index.html" class="nav__link active">Início</a></li>
+        <li><a href="pages/bolos.html" class="nav__link">Bolos</a></li>
+        <li><a href="pages/doces.html" class="nav__link">Doces</a></li>
+        <li><a href="pages/salgados.html" class="nav__link">Salgados</a></li>
+        <li><a href="pages/sobre.html" class="nav__link">Nossa História</a></li>
+        <li><a href="pages/contato.html" class="nav__link">Contato</a></li>
+        <li>
+          <a href="pages/chocolateria.html" class="nav__link nav__link--highlight">
+            🍫 Páscoa 2026
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <!-- Empurra o conteúdo abaixo do nav fixo -->
+  <div class="nav-spacer"></div>
+
+
+  <!-- ======================================================
+       HERO
+       ====================================================== -->
+  <main id="main">
+
+    <section class="hero" aria-label="Apresentação">
+      <div class="hero__content">
+        <span class="hero__eyebrow">✦ 20 anos de amor e dedicação</span>
+        <h1 class="hero__title">
+          Feito com carinho,<br>
+          <em>do jeito que você ama</em>
+        </h1>
+        <p class="hero__description">
+          Bolos artesanais, doces e chocolateria especial — cada receita
+          preparada com ingredientes selecionados e o carinho de quem faz
+          pra família.
+        </p>
+        <div class="hero__actions">
+          <a href="pages/chocolateria.html" class="btn btn--primary btn--lg">
+            🍫 Ver Páscoa 2026
+          </a>
+          <a href="pages/bolos.html" class="btn btn--outline btn--lg">
+            Nossos Bolos
+          </a>
+        </div>
+      </div>
+      <div class="hero__image" aria-hidden="true">
+        <!-- Imagem principal do hero — adicionar depois -->
+        <div class="hero__image-placeholder">
+          <span>🎂</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================
+         SEÇÃO DE DESTAQUE — PÁSCOA
+         ==================================================== -->
+    <section class="section pascoa-banner" aria-label="Páscoa 2026">
+      <div class="container">
+        <div class="pascoa-banner__inner">
+          <div class="pascoa-banner__text">
+            <span class="section-label">Edição limitada</span>
+            <h2 class="section-title">
+              Páscoa <em>2026</em>
+            </h2>
+            <p class="section-subtitle">
+              Ovos de colher, bombons artesanais, trufas e muito mais.
+              Encomende com antecedência — vagas limitadas!
+            </p>
+            <a href="pages/chocolateria.html" class="btn btn--primary" style="margin-top: var(--space-8)">
+              Ver Catálogo de Páscoa
+            </a>
+          </div>
+          <div class="pascoa-banner__decoration" aria-hidden="true">
+            🥚🍫🐰
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================
+         CATEGORIAS
+         ==================================================== -->
+    <section class="section section--categories" aria-label="Categorias">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">O que fazemos</span>
+          <h2 class="section-title">Feito pra adoçar<br><em>cada momento</em></h2>
+        </div>
+
+        <div class="categories-grid">
+          <a href="pages/chocolateria.html" class="category-card category-card--featured" aria-label="Chocolateria e Páscoa">
+            <div class="category-card__img-wrap">
+              <!-- src: assets/images/chocolateria/hero.jpg -->
+              <div class="category-card__placeholder">🍫</div>
+            </div>
+            <div class="category-card__body">
+              <span class="category-card__tag">Destaque da Páscoa</span>
+              <h3 class="category-card__title">Chocolateria</h3>
+              <p class="category-card__desc">Ovos de colher, trufas, bombons e caixas especiais.</p>
+            </div>
+          </a>
+
+          <a href="pages/bolos.html" class="category-card" aria-label="Bolos artesanais">
+            <div class="category-card__img-wrap">
+              <div class="category-card__placeholder">🎂</div>
+            </div>
+            <div class="category-card__body">
+              <h3 class="category-card__title">Bolos</h3>
+              <p class="category-card__desc">Para aniversários, casamentos e datas especiais.</p>
+            </div>
+          </a>
+
+          <a href="pages/doces.html" class="category-card" aria-label="Doces e confeitaria">
+            <div class="category-card__img-wrap">
+              <div class="category-card__placeholder">🍬</div>
+            </div>
+            <div class="category-card__body">
+              <h3 class="category-card__title">Doces</h3>
+              <p class="category-card__desc">Bem-casados, brigadeiros gourmet e muito mais.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================
+         SOBRE / PROVA SOCIAL
+         ==================================================== -->
+    <section class="section section--about bg-rosa" aria-label="Sobre a Tia Bete">
+      <div class="container">
+        <div class="about-strip">
+          <div class="about-strip__stats">
+            <div class="stat">
+              <span class="stat__number">+20</span>
+              <span class="stat__label">Anos de história</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number">100%</span>
+              <span class="stat__label">Artesanal</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number">♥</span>
+              <span class="stat__label">Feito com amor</span>
+            </div>
+          </div>
+          <div class="about-strip__cta">
+            <p class="about-strip__text">
+              Mais de 20 anos preparando receitas especiais com o carinho de quem faz para a família.
+            </p>
+            <a href="pages/sobre.html" class="btn btn--outline-dark">Nossa História</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+
+        <!-- Brand -->
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <img
+              src="assets/images/logo/logo.png"
+              alt="Tia Bete Bolos"
+              class="footer__logo-img"
+              width="56" height="56"
+            />
+            <span class="footer__logo-name">Tia Bete Bolos</span>
+          </a>
+          <p class="footer__tagline">
+            Confeitaria artesanal com mais de 20 anos de história,
+            feita com amor e ingredientes selecionados.
+          </p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <span aria-hidden="true">📷</span>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <span aria-hidden="true">👍</span>
+            </a>
+            <a
+              href="https://wa.me/5511972710172"
+              class="footer__social-link"
+              aria-label="WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">💬</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Produtos -->
+        <div>
+          <h3 class="footer__col-title">Produtos</h3>
+          <ul class="footer__links" role="list">
+            <li><a href="pages/chocolateria.html" class="footer__link">🍫 Páscoa 2026</a></li>
+            <li><a href="pages/chocolateria.html" class="footer__link">Chocolateria</a></li>
+            <li><a href="pages/bolos.html" class="footer__link">Bolos Artesanais</a></li>
+            <li><a href="pages/doces.html" class="footer__link">Doces & Confeitaria</a></li>
+          </ul>
+        </div>
+
+        <!-- Institucional -->
+        <div>
+          <h3 class="footer__col-title">A Loja</h3>
+          <ul class="footer__links" role="list">
+            <li><a href="pages/sobre.html" class="footer__link">Nossa História</a></li>
+            <li><a href="pages/contato.html" class="footer__link">Contato</a></li>
+            <li><a href="pages/contato.html" class="footer__link">Encomendas</a></li>
+          </ul>
+        </div>
+
+        <!-- Contato -->
+        <div>
+          <h3 class="footer__col-title">Contato</h3>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon" aria-hidden="true">📞</span>
+            <span>(11) 97271-0172</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon" aria-hidden="true">📍</span>
+            <span>São Paulo, SP</span>
+          </div>
+          <a
+            href="https://wa.me/5511972710172?text=Olá,%20gostaria%20de%20fazer%20um%20pedido!"
+            class="footer__whatsapp-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chamar no WhatsApp"
+          >
+            💬 Pedir pelo WhatsApp
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 Tia Bete Bolos. Todos os direitos reservados.</span>
+        <span>Feito com <span class="footer__bottom-heart" aria-label="amor">♥</span> para adoçar sua vida</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ======================================================
+       BOTÃO FLUTUANTE WHATSAPP
+       ====================================================== -->
+  <a
+    href="https://wa.me/5511972710172?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido!"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chamar no WhatsApp"
+    title="Fale conosco pelo WhatsApp"
+  >
+    💬
+  </a>
+
+
+  <!-- ======================================================
+       SCRIPTS
+       ====================================================== -->
+  <script src="js/main.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/whatsapp.js"></script>
+
+</body>
+</html>

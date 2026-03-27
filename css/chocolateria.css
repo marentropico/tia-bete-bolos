@@ -1,0 +1,730 @@
+/* ============================================================
+   TIA BETE BOLOS — Chocolateria / Páscoa 2026
+   Tema: editorial de luxo em tons escuros de chocolate
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   VARIÁVEIS LOCAIS (complementam as globais)
+   ---------------------------------------------------------- */
+.page-chocolateria {
+  --choc-deep:     #1C0A04;
+  --choc-mid:      #2E1208;
+  --choc-surface:  #3D1A0E;
+  --choc-gold:     #D4955A;
+  --choc-gold-lt:  #E8B88A;
+  --choc-creme:    #FFF5EC;
+  --choc-rosa:     #F4AEBB;
+}
+
+/* ----------------------------------------------------------
+   HERO
+   ---------------------------------------------------------- */
+.choc-hero {
+  background-color: var(--choc-deep);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
+/* Orbs de luz ambiente — fundo orgânico */
+.choc-hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.choc-hero__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.25;
+}
+
+.choc-hero__orb--1 {
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, #8B1A2B 0%, transparent 70%);
+  top: -120px; left: -100px;
+  animation: orbDrift 14s ease-in-out infinite alternate;
+}
+
+.choc-hero__orb--2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, #5C3317 0%, transparent 70%);
+  bottom: 0; right: -80px;
+  animation: orbDrift 18s ease-in-out infinite alternate-reverse;
+}
+
+.choc-hero__orb--3 {
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, #D4955A 0%, transparent 70%);
+  top: 40%; left: 40%;
+  opacity: 0.15;
+  animation: orbDrift 22s ease-in-out infinite alternate;
+}
+
+@keyframes orbDrift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(30px, 20px) scale(1.08); }
+}
+
+.choc-hero__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: var(--space-12);
+  padding-top: var(--space-20);
+  padding-bottom: var(--space-16);
+  position: relative;
+  z-index: 1;
+}
+
+.choc-hero__eyebrow {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--choc-gold);
+  border: 1px solid rgba(212, 149, 90, 0.35);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-5);
+  animation: fadeInDown 0.6s ease forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.choc-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  color: var(--choc-creme);
+  margin-bottom: var(--space-6);
+  animation: fadeInUp 0.7s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.choc-hero__title em {
+  font-style: italic;
+  color: var(--choc-gold);
+  display: block;
+}
+
+.choc-hero__desc {
+  font-size: var(--text-lg);
+  color: rgba(255, 245, 236, 0.7);
+  line-height: var(--leading-relaxed);
+  max-width: 500px;
+  margin-bottom: var(--space-10);
+  animation: fadeInUp 0.7s ease forwards;
+  animation-delay: 0.35s;
+  opacity: 0;
+}
+
+.choc-hero__actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  animation: fadeInUp 0.7s ease forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+/* Botão especial para seção escura */
+.btn--rosa {
+  background-color: var(--color-rosa);
+  color: var(--color-bordo-dark);
+  font-weight: var(--font-bold);
+  box-shadow: 0 4px 20px rgba(244, 174, 187, 0.35);
+}
+.btn--rosa:hover {
+  background-color: var(--color-rosa-dark);
+  color: white;
+  box-shadow: 0 8px 30px rgba(244, 174, 187, 0.45);
+}
+
+.btn--outline-creme {
+  background-color: transparent;
+  border: 2px solid rgba(255, 245, 236, 0.4);
+  color: var(--choc-creme);
+}
+.btn--outline-creme:hover {
+  background-color: rgba(255, 245, 236, 0.1);
+  border-color: var(--choc-creme);
+}
+
+/* Visual do hero — ovos flutuantes */
+.choc-hero__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scaleIn 0.8s ease forwards;
+  animation-delay: 0.25s;
+  opacity: 0;
+}
+
+.choc-hero__egg-wrap {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.choc-hero__egg {
+  position: absolute;
+  font-size: 6rem;
+  animation: float 5s ease-in-out infinite;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+}
+
+.choc-hero__egg:nth-child(1) { top: 10px;  left: 50%;  transform: translateX(-50%); animation-delay: 0s; }
+.choc-hero__egg--2           { bottom: 20px; left: 0;   font-size: 4rem; animation-delay: 1.2s; }
+.choc-hero__egg--3           { bottom: 30px; right: 0;  font-size: 4rem; animation-delay: 2.4s; }
+
+/* Pílulas de navegação interna */
+.choc-hero__nav {
+  border-top: 1px solid rgba(255, 245, 236, 0.08);
+  background-color: rgba(0,0,0,0.25);
+  padding: var(--space-4) 0;
+  position: relative;
+  z-index: 1;
+}
+
+.choc-nav-pills {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.choc-pill {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: rgba(255, 245, 236, 0.65);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  border: 1px solid rgba(255, 245, 236, 0.12);
+  transition: color var(--transition-base), background-color var(--transition-base), border-color var(--transition-base);
+}
+
+.choc-pill:hover {
+  color: var(--choc-creme);
+  background-color: rgba(255, 245, 236, 0.08);
+  border-color: rgba(255, 245, 236, 0.25);
+}
+
+.choc-pill--cta {
+  background-color: var(--color-bordo);
+  color: white;
+  border-color: var(--color-bordo);
+}
+.choc-pill--cta:hover {
+  background-color: var(--color-bordo-light);
+  border-color: var(--color-bordo-light);
+  color: white;
+}
+
+/* ----------------------------------------------------------
+   SEÇÕES GENÉRICAS
+   ---------------------------------------------------------- */
+.choc-section {
+  padding: var(--space-24) 0;
+  background-color: var(--color-creme);
+}
+
+.choc-section--dark {
+  background-color: var(--choc-mid);
+}
+
+.choc-section__header {
+  max-width: 600px;
+  margin-bottom: var(--space-12);
+}
+
+.choc-section__cta {
+  margin-top: var(--space-10);
+  text-align: center;
+}
+
+/* ----------------------------------------------------------
+   TABELA DE PREÇOS
+   ---------------------------------------------------------- */
+.choc-price-table {
+  background-color: white;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-creme-darker);
+}
+
+.choc-price-table--dark {
+  background-color: var(--choc-surface);
+  border-color: rgba(255,245,236,0.08);
+}
+
+.choc-price-table__sizes {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--color-bordo);
+  gap: var(--space-4);
+}
+
+.choc-price-table__size-label {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-wider);
+  color: white;
+  text-align: center;
+}
+
+.choc-price-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: var(--space-5) var(--space-6);
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--color-creme-dark);
+  transition: background-color var(--transition-fast);
+}
+
+.choc-price-row:hover {
+  background-color: var(--color-rosa-lighter);
+}
+
+.choc-price-row--dark {
+  border-color: rgba(255,245,236,0.08);
+}
+
+.choc-price-row--dark:hover {
+  background-color: rgba(255,245,236,0.04);
+}
+
+.choc-price-row--last {
+  border-bottom: none;
+}
+
+.choc-price-row__name {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-chocolate-dark);
+}
+
+.choc-price-row__icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.choc-price-row__val {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-bordo);
+  text-align: center;
+}
+
+.choc-price-row__val--kg {
+  color: var(--color-chocolate);
+  font-size: var(--text-xl);
+}
+
+/* ----------------------------------------------------------
+   CARDS DE SABOR (recheados)
+   ---------------------------------------------------------- */
+.choc-flavors {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-10);
+}
+
+.choc-flavor-card {
+  background-color: var(--choc-surface);
+  border: 1px solid rgba(255,245,236,0.1);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.choc-flavor-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212,149,90,0.4);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.choc-flavor-card__icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-4);
+  display: block;
+  animation: float 6s ease-in-out infinite;
+}
+
+.choc-flavor-card:nth-child(2) .choc-flavor-card__icon { animation-delay: 1s; }
+.choc-flavor-card:nth-child(3) .choc-flavor-card__icon { animation-delay: 2s; }
+
+.choc-flavor-card__name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--choc-gold);
+  margin-bottom: var(--space-3);
+}
+
+.choc-flavor-card__desc {
+  font-size: var(--text-sm);
+  color: rgba(255, 245, 236, 0.6);
+  line-height: var(--leading-relaxed);
+}
+
+/* ----------------------------------------------------------
+   OBSERVAÇÃO
+   ---------------------------------------------------------- */
+.choc-obs {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: rgba(255, 245, 236, 0.45);
+  font-style: italic;
+  margin-top: var(--space-6);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ----------------------------------------------------------
+   OUTROS PRODUTOS — grid de cards
+   ---------------------------------------------------------- */
+.choc-outros-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.choc-outro-card {
+  background-color: white;
+  border: 1px solid var(--color-creme-darker);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.choc-outro-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.choc-outro-card--consultar {
+  grid-column: span 2;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  background: var(--gradient-section);
+}
+
+.choc-outro-card__top {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  flex: 1;
+}
+
+.choc-outro-card__emoji {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+}
+
+.choc-outro-card__name {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-chocolate-dark);
+  margin-bottom: var(--space-1);
+}
+
+.choc-outro-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+}
+
+.choc-outro-card__price {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-bordo);
+}
+
+.choc-outro-card__price--consultar {
+  font-size: var(--text-lg);
+  color: var(--color-chocolate);
+  font-style: italic;
+}
+
+.choc-outro-card__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bordo);
+  color: white;
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  letter-spacing: var(--tracking-wide);
+  transition: background-color var(--transition-base), transform var(--transition-bounce);
+  white-space: nowrap;
+  align-self: flex-start;
+}
+
+.choc-outro-card__btn:hover {
+  background-color: var(--color-bordo-light);
+  transform: translateY(-2px);
+}
+
+/* ----------------------------------------------------------
+   SEÇÃO DE ENCOMENDA (CTA final)
+   ---------------------------------------------------------- */
+.choc-encomenda {
+  background-color: var(--choc-deep);
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-32) 0;
+}
+
+.choc-encomenda__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 70% at 20% 50%, rgba(139,26,43,0.3) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 80% 50%, rgba(92,51,23,0.4) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.choc-encomenda__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.choc-encomenda__content {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.choc-encomenda__eyebrow {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--choc-gold);
+  border: 1px solid rgba(212,149,90,0.3);
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-6);
+}
+
+.choc-encomenda__title {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  color: var(--choc-creme);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-5);
+}
+
+.choc-encomenda__title em {
+  font-style: italic;
+  color: var(--choc-gold);
+}
+
+.choc-encomenda__desc {
+  font-size: var(--text-lg);
+  color: rgba(255,245,236,0.65);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-10);
+}
+
+/* Steps do processo */
+.choc-encomenda__steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-10);
+  flex-wrap: wrap;
+}
+
+.choc-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.choc-step__num {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bordo);
+  color: white;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 0 4px rgba(139,26,43,0.25);
+}
+
+.choc-step__label {
+  font-size: var(--text-sm);
+  color: rgba(255,245,236,0.6);
+  font-weight: var(--font-medium);
+  text-align: center;
+  max-width: 90px;
+}
+
+.choc-step__arrow {
+  font-size: var(--text-xl);
+  color: rgba(255,245,236,0.2);
+  margin-bottom: var(--space-5);
+}
+
+/* Botão verde WhatsApp para CTA final */
+.btn--encomenda {
+  background-color: var(--color-whatsapp);
+  color: white;
+  font-size: var(--text-lg);
+  padding: var(--space-5) var(--space-10);
+  box-shadow: 0 8px 30px rgba(37,211,102,0.35);
+  margin-bottom: var(--space-5);
+}
+.btn--encomenda:hover {
+  background-color: var(--color-whatsapp-dark);
+  box-shadow: 0 12px 40px rgba(37,211,102,0.45);
+}
+
+.choc-encomenda__tel {
+  font-size: var(--text-sm);
+  color: rgba(255,245,236,0.4);
+  letter-spacing: var(--tracking-wide);
+}
+
+.choc-encomenda__tel strong {
+  color: rgba(255,245,236,0.65);
+}
+
+/* ----------------------------------------------------------
+   RESPONSIVO
+   ---------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .choc-outros-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .choc-outro-card--consultar {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .choc-hero__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: var(--space-12);
+  }
+
+  .choc-hero__title {
+    font-size: var(--text-4xl);
+  }
+
+  .choc-hero__desc {
+    margin: 0 auto var(--space-8);
+  }
+
+  .choc-hero__actions {
+    justify-content: center;
+  }
+
+  .choc-hero__visual {
+    order: -1;
+  }
+
+  .choc-hero__egg-wrap {
+    width: 200px; height: 200px;
+  }
+
+  .choc-hero__egg { font-size: 4rem; }
+  .choc-hero__egg--2,
+  .choc-hero__egg--3 { font-size: 2.8rem; }
+
+  .choc-flavors {
+    grid-template-columns: 1fr;
+  }
+
+  .choc-price-table__sizes,
+  .choc-price-row {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    padding: var(--space-4);
+    gap: var(--space-2);
+  }
+
+  .choc-price-row__name {
+    font-size: var(--text-base);
+  }
+
+  .choc-price-row__icon {
+    display: none;
+  }
+
+  .choc-outros-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .choc-outro-card--consultar {
+    grid-column: auto;
+    flex-direction: column;
+  }
+
+  .choc-encomenda__title {
+    font-size: var(--text-3xl);
+  }
+
+  .choc-encomenda__steps {
+    gap: var(--space-2);
+  }
+
+  .choc-step__arrow {
+    display: none;
+  }
+
+  .choc-encomenda__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .choc-price-table__sizes,
+  .choc-price-row {
+    grid-template-columns: 1.8fr 1fr 1fr;
+  }
+
+  /* esconde coluna 1kg em telas muito pequenas — fica claro no texto */
+  .choc-price-table__sizes span:last-child,
+  .choc-price-row__val--kg {
+    display: none;
+  }
+}
