@@ -11,8 +11,8 @@
   const links = [
     { href: `${base}index.html`,              label: 'Início',         file: 'index.html' },
     { href: `${base}pages/bolos.html`,        label: 'Bolos',          file: 'bolos.html' },
-    { href: `${base}pages/salgados.html`,     label: 'Salgados',       file: 'salgados.html' },
     { href: `${base}pages/doces.html`,        label: 'Doces',          file: 'doces.html' },
+    { href: `${base}pages/salgados.html`,     label: 'Salgados',       file: 'salgados.html' },
     { href: `${base}pages/sobre.html`,        label: 'Nossa História', file: 'sobre.html' },
     { href: `${base}pages/contato.html`,      label: 'Contato',        file: 'contato.html' },
   ];
@@ -36,9 +36,7 @@
       ${links.map(l => `
       <li><a href="${l.href}" class="nav__link${current === l.file ? ' active' : ''}">${l.label}</a></li>`).join('')}
       <li>
-        <a href="${base}pages/chocolateria.html" class="nav__link nav__link--highlight${current === 'chocolateria.html' ? ' active' : ''}">
-          🍫 Páscoa 2026
-        </a>
+        <a href="${base}pages/chocolateria.html" class="nav__link nav__link--highlight${current === 'chocolateria.html' ? ' active' : ''}">🍫 Páscoa 2026</a>
       </li>
     </ul>
   </div>
