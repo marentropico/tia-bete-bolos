@@ -9,7 +9,7 @@
   // Mensagens pré-definidas por página
   const messages = {
     'index.html':          'Olá! Vim pelo site e gostaria de fazer um pedido.',
-    'chocolateria.html':   'Olá! Vim pelo site e gostaria de encomendar produtos de Páscoa! 🍫',
+    'chocolateria.html':   'Olá! Vim pelo site e gostaria de encomendar produtos de Páscoa!',
     'bolos.html':          'Olá! Gostaria de encomendar um bolo. Pode me dar mais informações?',
     'doces.html':          'Olá! Tenho interesse nos doces. Pode me contar mais?',
     'sobre.html':          'Olá! Vim pelo site e gostaria de fazer um pedido.',
