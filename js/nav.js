@@ -14,7 +14,7 @@
     { href: `${base}pages/doces.html`,        label: 'Doces',          file: 'doces.html' },
     { href: `${base}pages/salgados.html`,     label: 'Salgados',       file: 'salgados.html' },
     { href: `${base}pages/sobre.html`,        label: 'Nossa História', file: 'sobre.html' },
-    { href: `${base}pages/contato.html`,      label: 'Contato',        file: 'contato.html' },
+    { href: `${base}pages/contato.html`,      label: 'Encomende',        file: 'contato.html' },
   ];
 
   const navHTML = `

@@ -1,51 +1,204 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Entre em contato com a Tia Bete – Encomendas por WhatsApp, Instagram ou pelo formulário. (11) 97271-0172." />
-  <title>Contato | Tia Bete Bolos</title>
-
-  <link rel="icon" type="image/png" href="../assets/images/logo/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="../css/reset.css" />
-  <link rel="stylesheet" href="../css/variables.css" />
-  <link rel="stylesheet" href="../css/global.css" />
-  <link rel="stylesheet" href="../css/contato.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Simule sua encomenda na Tia Bete Bolos — bolos, doces, salgados e festas completas. Calculamos a quantidade ideal e você envia direto pelo WhatsApp."/>
+  <title>Encomende | Tia Bete Bolos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/variables.css"/>
+  <link rel="stylesheet" href="../css/reset.css"/>
+  <link rel="stylesheet" href="../css/global.css"/>
+  <link rel="stylesheet" href="../css/components.css"/>
+  <link rel="stylesheet" href="../css/animations.css"/>
+  <link rel="stylesheet" href="../css/contato.css"/>
 </head>
 <body>
 
   <header id="main-header"></header>
 
-  <!-- ========== HERO – Contato ========== -->
-  <section id="hero-contato">
-    <!-- Título: "Vamos fazer algo delicioso juntos?" -->
-  </section>
+  <main id="main">
 
-  <!-- ========== FORMAS DE CONTATO ========== -->
-  <section id="formas-contato">
-    <!-- Cards: WhatsApp (11) 97271-0172 | Instagram | Formulário -->
-  </section>
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+    <section class="enc-hero" aria-label="Faça sua encomenda">
+      <div class="container enc-hero__inner">
+        <span class="enc-hero__eyebrow">✦ Simples, rápido e sem compromisso</span>
+        <h1 class="enc-hero__title">Simule sua <em>Encomenda</em></h1>
+        <p class="enc-hero__desc">
+          Preencha os campos abaixo e veja a quantidade ideal para o seu evento.
+          Depois é só revisar e enviar pelo WhatsApp — sem pressão.
+        </p>
+      </div>
+    </section>
 
-  <!-- ========== FORMULÁRIO DE ENCOMENDA ========== -->
-  <section id="formulario-encomenda">
-    <!-- Formulário: Nome | Telefone | Tipo de produto | Data desejada | Mensagem -->
-    <!-- Obs: ao submeter, abre link WhatsApp pré-preenchido -->
-  </section>
+    <!-- =====================================================
+         FORMULÁRIO + RESULTADO
+         ===================================================== -->
+    <section class="enc-form-section" aria-label="Simulador de encomenda">
+      <div class="container enc-layout">
 
-  <!-- ========== INFO OPERACIONAL ========== -->
-  <section id="info-operacional">
-    <!-- Prazo de encomenda | Formas de pagamento | Entrega/Retirada -->
-  </section>
+        <!-- FORMULÁRIO -->
+        <div class="enc-card" id="enc-form-card">
+          <h2 class="enc-card__title">Conte-nos sobre seu evento</h2>
+
+          <!-- Campo: Nome -->
+          <div class="enc-field">
+            <label class="enc-label" for="campo-nome">Seu nome</label>
+            <input
+              class="enc-input"
+              type="text"
+              id="campo-nome"
+              placeholder="Como podemos te chamar?"
+              autocomplete="given-name"
+            />
+          </div>
+
+          <!-- Campo: Tipo de encomenda -->
+          <div class="enc-field">
+            <label class="enc-label">Tipo de encomenda</label>
+            <div class="enc-chips" role="group" aria-label="Tipo de encomenda">
+              <button class="enc-chip" data-group="tipo" data-value="bolos"    type="button">🎂 Bolos</button>
+              <button class="enc-chip" data-group="tipo" data-value="doces"    type="button">🍬 Doces</button>
+              <button class="enc-chip" data-group="tipo" data-value="salgados" type="button">🍗 Salgados</button>
+              <button class="enc-chip" data-group="tipo" data-value="paes"     type="button">🍞 Pães Caseiros</button>
+              <button class="enc-chip enc-chip--full" data-group="tipo" data-value="festa" type="button">🎉 Festa Completa</button>
+            </div>
+          </div>
+
+          <!-- Campo: Tipo de evento -->
+          <div class="enc-field">
+            <label class="enc-label">Tipo de evento</label>
+            <div class="enc-chips" role="group" aria-label="Tipo de evento">
+              <button class="enc-chip" data-group="evento" data-value="casual"      type="button">☕ Reunião Casual</button>
+              <button class="enc-chip" data-group="evento" data-value="aniversario" type="button">🎈 Festa de Aniversário</button>
+              <button class="enc-chip" data-group="evento" data-value="casamento"   type="button">💍 Casamento</button>
+            </div>
+          </div>
+
+          <!-- Campo: Convidados -->
+          <div class="enc-field">
+            <label class="enc-label">Quantidade de convidados</label>
+            <div class="enc-chips" role="group" aria-label="Quantidade de convidados">
+              <button class="enc-chip" data-group="convidados" data-value="10"  type="button">Até 10</button>
+              <button class="enc-chip" data-group="convidados" data-value="30"  type="button">Até 30</button>
+              <button class="enc-chip" data-group="convidados" data-value="50"  type="button">Até 50</button>
+              <button class="enc-chip" data-group="convidados" data-value="70"  type="button">Até 70</button>
+              <button class="enc-chip" data-group="convidados" data-value="100" type="button">Até 100</button>
+            </div>
+          </div>
+
+          <!-- Campo: Quantidade calculada (dinâmico) -->
+          <div class="enc-field enc-field--qty" id="campo-qty-wrap" aria-live="polite">
+            <label class="enc-label" id="qty-label">Quantidade</label>
+            <div class="enc-qty-row">
+              <input
+                class="enc-input enc-input--qty"
+                type="number"
+                id="campo-qty"
+                min="1"
+                step="1"
+                placeholder="—"
+              />
+              <span class="enc-qty-unit" id="qty-unit"></span>
+            </div>
+            <p class="enc-qty-hint" id="qty-hint"></p>
+          </div>
+
+          <!-- Botão calcular -->
+          <button class="btn btn--primary enc-btn-calcular" id="btn-calcular" type="button" disabled>
+            Calcular encomenda
+          </button>
+        </div>
+
+        <!-- RESULTADO -->
+        <div class="enc-result" id="enc-result" aria-live="polite" hidden>
+          <div class="enc-result__header">
+            <span class="enc-result__icon" id="result-icon">🎂</span>
+            <div>
+              <p class="enc-result__label">Estimativa para</p>
+              <h2 class="enc-result__name" id="result-name">—</h2>
+            </div>
+          </div>
+
+          <div class="enc-result__items" id="result-items">
+            <!-- itens injetados pelo JS -->
+          </div>
+
+          <div class="enc-result__disclaimer">
+            <span class="enc-result__disclaimer-icon">ℹ️</span>
+            <p>
+              Estas são sugestões baseadas em dados reais de Catering e mais de
+              <strong>20 anos de experiência</strong> em confeitaria. Você poderá
+              ajustar as quantidades diretamente no WhatsApp antes de enviar.
+            </p>
+          </div>
+
+          <button class="btn btn--whatsapp enc-btn-wa" id="btn-whatsapp" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.215a.75.75 0 00.918.928l5.42-1.461A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.699-.504-5.252-1.385l-.372-.216-3.865 1.043 1.065-3.755-.236-.384A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            Solicitar orçamento pelo WhatsApp
+          </button>
+          <p class="enc-result__wa-note">Você poderá revisar e editar a mensagem antes de enviar.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         LOCALIZAÇÃO
+         ===================================================== -->
+    <section class="enc-location" aria-label="Localização da loja">
+      <div class="container enc-location__inner">
+
+        <div class="enc-location__info">
+          <span class="section-label">Onde nos encontrar</span>
+          <h2 class="enc-location__title">Retire ou <em>combine a entrega</em></h2>
+          <p class="enc-location__desc">
+            Retire sua encomenda gratuitamente ou combine a entrega diretamente durante o pedido.
+          </p>
+          <address class="enc-location__address">
+            <strong>Rua Coronel João Cabanas, 978</strong><br/>
+            Jardim Belcito · São Paulo – SP<br/>
+            CEP 04855-100
+          </address>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=Rua+Coronel+João+Cabanas+978+Jardim+Belcito+São+Paulo+SP"
+            class="btn btn--primary enc-location__btn"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ver rotas no Google Maps"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Ver rotas
+          </a>
+        </div>
+
+        <div class="enc-location__map">
+          <iframe
+            title="Localização Tia Bete Bolos"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.7!2d-46.6923167!3d-23.7636182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQ1JzQ5LjAiUyA0NsKwNDEnMzIuMyJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
 
   <footer id="main-footer"></footer>
 
   <script src="../js/nav.js"></script>
+  <script src="../js/menu.js"></script>
   <script src="../js/contato.js"></script>
-  <script src="../js/main.js"></script>
-
 </body>
 </html>
