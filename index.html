@@ -11,6 +11,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
 
+  <!-- FontAwesome (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Swiper CSS (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   <!-- CSS (ordem importa: variables → reset → global → home) -->
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/reset.css" />
@@ -84,48 +90,249 @@
 
 
     <!-- ====================================================
-         CATEGORIAS
+         CARROSSEL DE CATEGORIAS
          ==================================================== -->
-    <section class="section section--categories" aria-label="Categorias">
+    <section class="section section--carousel" aria-label="Nossas categorias">
       <div class="container">
         <div class="section-header">
           <span class="section-label">O que fazemos</span>
-          <h2 class="section-title">Feito pra adoçar<br><em>cada momento</em></h2>
+          <h2 class="section-title">Conheça todos os nossos <em>sabores</em></h2>
         </div>
+      </div>
 
-        <div class="categories-grid">
-          <a href="pages/chocolateria.html" class="category-card category-card--featured" aria-label="Chocolateria e Páscoa">
-            <div class="category-card__img-wrap">
-              <!-- src: assets/images/chocolateria/hero.jpg -->
-              <div class="category-card__placeholder">🍫</div>
-            </div>
-            <div class="category-card__body">
-              <span class="category-card__tag">Destaque da Páscoa</span>
-              <h3 class="category-card__title">Chocolateria</h3>
-              <p class="category-card__desc">Ovos de colher, trufas, bombons e caixas especiais.</p>
-            </div>
-          </a>
+      <!-- Swiper -->
+      <div class="swiper" id="categoriesSwiper">
+        <ul class="swiper-wrapper" role="list">
 
-          <a href="pages/bolos.html" class="category-card" aria-label="Bolos artesanais">
-            <div class="category-card__img-wrap">
-              <div class="category-card__placeholder">🎂</div>
-            </div>
-            <div class="category-card__body">
-              <h3 class="category-card__title">Bolos</h3>
-              <p class="category-card__desc">Para aniversários, casamentos e datas especiais.</p>
-            </div>
-          </a>
+            <!-- ── PRINCIPAIS (primeiros 4 visíveis no desktop) ── -->
 
-          <a href="pages/doces.html" class="category-card" aria-label="Doces e confeitaria">
-            <div class="category-card__img-wrap">
-              <div class="category-card__placeholder">🍬</div>
-            </div>
-            <div class="category-card__body">
-              <h3 class="category-card__title">Doces</h3>
-              <p class="category-card__desc">Bem-casados, brigadeiros gourmet e muito mais.</p>
-            </div>
-          </a>
-        </div>
+            <li class="swiper-slide">
+              <a href="pages/bolos.html" class="ccard" aria-label="Bolos artesanais">
+                <div class="ccard__img-wrap">
+                  <div class="ccard__placeholder">🎂</div>
+                </div>
+                <div class="ccard__body">
+                  <h3 class="ccard__title">Bolos</h3>
+                  <span class="ccard__sub">Simples, recheados e de festa</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="swiper-slide">
+              <a href="pages/doces.html" class="ccard" aria-label="Doces e confeitaria">
+                <div class="ccard__img-wrap">
+                  <div class="ccard__placeholder">🍬</div>
+                </div>
+                <div class="ccard__body">
+                  <h3 class="ccard__title">Doces</h3>
+                  <span class="ccard__sub">Brigadeiros, tortas e mousses</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="swiper-slide">
+              <a href="pages/salgados.html" class="ccard" aria-label="Salgados artesanais">
+                <div class="ccard__img-wrap">
+                  <div class="ccard__placeholder">🍗</div>
+                </div>
+                <div class="ccard__body">
+                  <h3 class="ccard__title">Salgados</h3>
+                  <span class="ccard__sub">Fritos, assados e pães caseiros</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="swiper-slide">
+              <a href="pages/chocolateria.html" class="ccard" aria-label="Chocolateria e Páscoa">
+                <div class="ccard__img-wrap">
+                  <div class="ccard__placeholder">🍫</div>
+                  <span class="ccard__badge">Páscoa 2026</span>
+                </div>
+                <div class="ccard__body">
+                  <h3 class="ccard__title">Chocolateria</h3>
+                  <span class="ccard__sub">Ovos, trufas e bombons</span>
+                </div>
+              </a>
+            </li>
+
+            <!-- ── SUBCATEGORIAS ── -->
+
+            <li class="swiper-slide">
+              <a href="pages/bolos.html#simples" class="ccard" aria-label="Bolos Simples">
+                <div class="ccard__img-wrap">
+                  <div class="ccard__placeholder">🌽</div>
+                </div>
+                <div class="ccard__body">
+                  <h3 class="ccard__title">Bolos Simples</h3>
+                  <span class="ccard__sub">Fubá, milho, chocolate, cenoura</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="swiper-slide">
+              <a href="pages/bolos.html#recheados" class="ccard" aria-label="Bolos Recheados">
+                <div class="ccard__img-wrap">
+                  <div class="ccard__placeholder">🍓</div>
+                </div>
+                <div class="ccard__body">
+                  <h3 class="ccard__title">Bolos Recheados</h3>
+                  <span class="ccard__sub">Brigadeiro, Ninho, Floresta Negra</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="swiper-slide">
+              <a href="pages/bolos.html#festa" class="ccard" aria-label="Bolos de Festa">
+                <div class="ccard__img-wrap">
+                  <div class="ccard__placeholder">🎉</div>
+                </div>
+                <div class="ccard__body">
+                  <h3 class="ccard__title">Bolos de Festa</h3>
+                  <span class="ccard__sub">Personalizados e temáticos</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="swiper-slide">
+              <a href="pages/doces.html#tradicionais" class="ccard" aria-label="Doces Tradicionais de Festa">
+                <div class="ccard__img-wrap">
+                  <div class="ccard__placeholder">🍫</div>
+                </div>
+                <div class="ccard__body">
+                  <h3 class="ccard__title">Doces Tradicionais</h3>
+                  <span class="ccard__sub">Brigadeiro, quindim, beijinho</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="swiper-slide">
+              <a href="pages/doces.html#tortas" class="ccard" aria-label="Tortas e Mousses">
+                <div class="ccard__img-wrap">
+                  <div class="ccard__placeholder">🥧</div>
+                </div>
+                <div class="ccard__body">
+                  <h3 class="ccard__title">Tortas & Mousses</h3>
+                  <span class="ccard__sub">Holandesa, maracujá, limão</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="swiper-slide">
+              <a href="pages/doces.html#caramelizados" class="ccard" aria-label="Doces Caramelizados">
+                <div class="ccard__img-wrap">
+                  <div class="ccard__placeholder">🍎</div>
+                </div>
+                <div class="ccard__body">
+                  <h3 class="ccard__title">Caramelizados</h3>
+                  <span class="ccard__sub">Maçã e morango do amor</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="swiper-slide">
+              <a href="pages/doces.html#assados" class="ccard" aria-label="Assados Recheados">
+                <div class="ccard__img-wrap">
+                  <div class="ccard__placeholder">🧁</div>
+                </div>
+                <div class="ccard__body">
+                  <h3 class="ccard__title">Assados Recheados</h3>
+                  <span class="ccard__sub">Carolinas e bombas de chocolate</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="swiper-slide">
+              <a href="pages/salgados.html#mini" class="ccard" aria-label="Salgados Mini">
+                <div class="ccard__img-wrap">
+                  <div class="ccard__placeholder">🍡</div>
+                </div>
+                <div class="ccard__body">
+                  <h3 class="ccard__title">Salgados Mini</h3>
+                  <span class="ccard__sub">Coxinha, bolinha, quibe, risole</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="swiper-slide">
+              <a href="pages/salgados.html#especiais" class="ccard" aria-label="Salgados Especiais">
+                <div class="ccard__img-wrap">
+                  <div class="ccard__placeholder">🥐</div>
+                </div>
+                <div class="ccard__body">
+                  <h3 class="ccard__title">Salgados Especiais</h3>
+                  <span class="ccard__sub">Pastel, empada, mini pizza</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="swiper-slide">
+              <a href="pages/salgados.html#assados" class="ccard" aria-label="Salgados Assados">
+                <div class="ccard__img-wrap">
+                  <div class="ccard__placeholder">🫓</div>
+                </div>
+                <div class="ccard__body">
+                  <h3 class="ccard__title">Assados</h3>
+                  <span class="ccard__sub">Fogaça e esfihas</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="swiper-slide">
+              <a href="pages/salgados.html#paes" class="ccard" aria-label="Pães Caseiros">
+                <div class="ccard__img-wrap">
+                  <div class="ccard__placeholder">🍞</div>
+                </div>
+                <div class="ccard__body">
+                  <h3 class="ccard__title">Pães Caseiros</h3>
+                  <span class="ccard__sub">Artesanais, de forma e panetones</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="swiper-slide">
+              <a href="pages/chocolateria.html#ovos-tradicionais" class="ccard" aria-label="Ovos Tradicionais">
+                <div class="ccard__img-wrap">
+                  <div class="ccard__placeholder">🥚</div>
+                </div>
+                <div class="ccard__body">
+                  <h3 class="ccard__title">Ovos Tradicionais</h3>
+                  <span class="ccard__sub">Ao leite, crocante, branco</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="swiper-slide">
+              <a href="pages/chocolateria.html#ovos-recheados" class="ccard" aria-label="Ovos Recheados">
+                <div class="ccard__img-wrap">
+                  <div class="ccard__placeholder">🍫</div>
+                </div>
+                <div class="ccard__body">
+                  <h3 class="ccard__title">Ovos Recheados</h3>
+                  <span class="ccard__sub">Trufa, maracujá e prestígio</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="swiper-slide">
+              <a href="pages/chocolateria.html#outros-produtos" class="ccard" aria-label="Outros Produtos de Chocolateria">
+                <div class="ccard__img-wrap">
+                  <div class="ccard__placeholder">🎁</div>
+                </div>
+                <div class="ccard__body">
+                  <h3 class="ccard__title">Outros Produtos</h3>
+                  <span class="ccard__sub">Trufas, pão de mel, bombons</span>
+                </div>
+              </a>
+            </li>
+
+        </ul>
+
+        <!-- Swiper Navigation Buttons -->
+        <button class="swiper-button-prev" aria-label="Categoria anterior"></button>
+        <button class="swiper-button-next" aria-label="Próxima categoria"></button>
+
+        <!-- Swiper Pagination (mobile) -->
+        <div class="swiper-pagination"></div>
       </div>
     </section>
 
@@ -167,10 +374,14 @@
   <!-- ======================================================
        SCRIPTS
        ====================================================== -->
+  <!-- Swiper JS (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
   <script src="js/nav.js"></script>
   <script src="js/main.js"></script>
   <script src="js/menu.js"></script>
   <script src="js/whatsapp.js"></script>
+  <script src="js/swiper-config.js"></script>
 
 </body>
 </html>

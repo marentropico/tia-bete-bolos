@@ -337,3 +337,260 @@
     max-width: 100%;
   }
 }
+
+/* ============================================================
+   CARROSSEL DE CATEGORIAS
+   ============================================================ */
+
+.section--carousel {
+  padding: var(--space-24) 0;
+  background-color: var(--color-creme);
+  overflow: hidden;
+}
+
+.section--carousel .section-header {
+  margin-bottom: var(--space-10);
+  text-align: center;
+}
+
+/* ----------------------------------------------------------
+   SWIPER CARROSSEL (Desktop + Mobile)
+   ---------------------------------------------------------- */
+
+.swiper {
+  position: relative;
+  width: 100%;
+  padding: var(--space-6) var(--space-4) var(--space-5);
+  margin: 0 -var(--space-4);
+  box-sizing: border-box;
+}
+
+.swiper-wrapper {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.swiper-slide {
+  height: auto;
+}
+
+/* Botões de navegação */
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--color-creme-darker);
+  color: var(--color-bordo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-bounce),
+    box-shadow var(--transition-base);
+  flex-shrink: 0;
+  outline: none;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: var(--color-bordo);
+  border-color: var(--color-bordo);
+  color: white;
+  box-shadow: var(--shadow-bordo);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 22px;
+  font-weight: 700;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+}
+
+.swiper-button-prev::after {
+  content: '\f137'; /* fas fa-chevron-circle-left */
+  font-family: 'Font Awesome 6 Free', 'FontAwesome';
+  font-weight: 900;
+}
+
+.swiper-button-next::after {
+  content: '\f138'; /* fas fa-chevron-circle-right */
+  font-family: 'Font Awesome 6 Free', 'FontAwesome';
+  font-weight: 900;
+}
+
+.swiper-button-prev {
+  left: 8px;
+}
+
+.swiper-button-next {
+  right: 8px;
+}
+
+/* Paginação (dots) – visível só no mobile */
+.swiper-pagination {
+  display: none;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  padding: 0 var(--space-4);
+  bottom: auto;
+  position: relative;
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-creme-darker);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-base), transform var(--transition-bounce);
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--color-bordo);
+  transform: scale(1.3);
+}
+
+/* Card do carrossel */
+.ccard {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--color-creme-dark);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+  min-height: 340px;
+}
+
+.ccard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-rosa);
+}
+
+/* Imagem do card */
+.ccard__img-wrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--color-rosa-lighter);
+}
+
+.ccard__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  background: var(--gradient-section);
+  transition: transform var(--transition-slow);
+}
+
+.ccard:hover .ccard__placeholder {
+  transform: scale(1.07);
+}
+
+/* Quando houver foto real */
+.ccard__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.ccard:hover .ccard__img {
+  transform: scale(1.07);
+}
+
+/* Badge sobre a imagem */
+.ccard__badge {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  background-color: var(--color-bordo);
+  color: white;
+  font-size: 10px;
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  padding: 3px var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+/* Corpo do card */
+.ccard__body {
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+}
+
+.ccard__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-chocolate-dark);
+  line-height: var(--leading-snug);
+}
+
+.ccard__sub {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+}
+
+/* ----------------------------------------------------------
+   RESPONSIVO DO SWIPER CARROSSEL
+   ---------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  /* Esconder botões de navegação no mobile */
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+
+  /* Mostrar dots no mobile */
+  .swiper-pagination {
+    display: flex;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Ajustar espaçamento do Swiper em tablet */
+  .swiper {
+    padding: 0 var(--space-3);
+    margin: 0 -var(--space-3);
+  }
+}
