@@ -123,7 +123,7 @@
   background-color: var(--color-rosa-lighter);
 }
 
-/* Destaque especial: link de Páscoa/Chocolateria */
+/* Destaque especial: link de Páscoa/Chocolataria */
 .nav__link--highlight {
   background-color: var(--color-bordo);
   color: var(--color-text-inverse) !important;

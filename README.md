@@ -3,7 +3,7 @@ Portfólio de Confeitaria Artesanal
 
 # 🎂 Tia Bete Bolos – Site Portfólio
 
-Site institucional e portfólio de produtos da confeitaria e chocolateria **Tia Bete Bolos**,
+Site institucional e portfólio de produtos da confeitaria e chocolataria **Tia Bete Bolos**,
 com mais de 20 anos de tradição. Desenvolvido com HTML, CSS e JavaScript puro (vanilla),
 estrutura multipágina, pronto para ser servido via VS Code Live Server.
 
@@ -15,7 +15,7 @@ tia-bete-bolos/
 ├── index.html                    ← Home (página principal)
 │
 ├── pages/
-│   ├── chocolateria.html         ← Chocolateria & Páscoa (foco inicial)
+│   ├── chocolataria.html         ← Chocolataria & Páscoa (foco inicial)
 │   ├── bolos.html                ← Portfólio de bolos
 │   ├── doces.html                ← Doces finos e brigadeiros
 │   ├── sobre.html                ← Nossa história (20+ anos)
@@ -26,7 +26,7 @@ tia-bete-bolos/
 │   ├── variables.css             ← Tokens: cores, fontes, espaçamento
 │   ├── global.css                ← Estilos globais e componentes
 │   ├── home.css                  ← Estilos específicos da Home
-│   ├── chocolateria.css          ← Estilos da página Chocolateria
+│   ├── chocolataria.css          ← Estilos da página Chocolataria
 │   ├── bolos.css                 ← Estilos da página Bolos
 │   ├── doces.css                 ← Estilos da página Doces
 │   ├── sobre.css                 ← Estilos da página Sobre
@@ -42,7 +42,7 @@ tia-bete-bolos/
     ├── images/
     │   ├── logo/                 ← Logo oficial e favicon
     │   ├── hero/                 ← Imagens de banner/hero
-    │   ├── chocolateria/         ← Fotos dos produtos de chocolate
+    │   ├── chocolataria/         ← Fotos dos produtos de chocolate
     │   ├── bolos/                ← Fotos dos bolos
     │   └── doces/                ← Fotos dos doces
     ├── icons/                    ← Ícones SVG (WhatsApp, Instagram, etc.)
@@ -71,7 +71,7 @@ tia-bete-bolos/
 1. `css/variables.css` + `css/reset.css` + `css/global.css` ✅
 2. `js/nav.js` → header/menu em todas as páginas
 3. `js/main.js` → footer + WhatsApp FAB + animações
-4. **`pages/chocolateria.html`** → foco Páscoa (prioridade!)
+4. **`pages/chocolataria.html`** → foco Páscoa (prioridade!)
 5. `index.html` → Home completa
 6. `pages/bolos.html` + `pages/doces.html`
 7. `pages/sobre.html` + `pages/contato.html`
@@ -81,4 +81,4 @@ tia-bete-bolos/
 ## 📱 Contato da Loja
 
 - **WhatsApp:** (11) 97271-0172
-- **Foco atual:** Chocolateria de Páscoa 🐣🍫
+- **Foco atual:** Chocolataria de Páscoa 🐣🍫

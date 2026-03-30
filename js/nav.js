@@ -36,7 +36,7 @@
       ${links.map(l => `
       <li><a href="${l.href}" class="nav__link${current === l.file ? ' active' : ''}">${l.label}</a></li>`).join('')}
       <li>
-        <a href="${base}pages/chocolateria.html" class="nav__link nav__link--highlight${current === 'chocolateria.html' ? ' active' : ''}">🍫 Páscoa 2026</a>
+        <a href="${base}pages/chocolataria.html" class="nav__link nav__link--highlight${current === 'chocolataria.html' ? ' active' : ''}">🍫 Páscoa 2026</a>
       </li>
     </ul>
   </div>
@@ -90,7 +90,7 @@
           <div>
             <h3 class="footer__col-title">Produtos</h3>
             <ul class="footer__links" role="list">
-              <li><a href="${base}pages/chocolateria.html" class="footer__link">🍫 Páscoa 2026</a></li>
+              <li><a href="${base}pages/chocolataria.html" class="footer__link">🍫 Páscoa 2026</a></li>
               <li><a href="${base}pages/bolos.html"        class="footer__link">Bolos Artesanais</a></li>
               <li><a href="${base}pages/salgados.html"     class="footer__link">Salgados</a></li>
               <li><a href="${base}pages/doces.html"        class="footer__link">Doces & Confeitaria</a></li>
