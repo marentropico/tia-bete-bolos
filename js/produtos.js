@@ -1,417 +1,104 @@
 /* ============================================================
-   TIA BETE BOLOS — Página de Detalhe do Produto
-   Lê os parâmetros da URL (?id=bolo-fuba&cat=bolos) e preenche
-   a página dinamicamente com os dados do catálogo.
+   TIA BETE BOLOS — Página de Detalhe do Produto (Refatorado para JSON)
    ============================================================ */
 
-/* ----------------------------------------------------------
-   CATÁLOGO DE PRODUTOS
-   Adicione/edite produtos aqui conforme o cardápio crescer.
-   ---------------------------------------------------------- */
-const CATALOG = {
-
-  /* ---- BOLOS ---- */
-  'bolo-fuba': {
-    cat: 'bolos', catLabel: 'Bolos Simples', emoji: '🌽',
-    name: 'Bolo de Fubá',
-    desc: 'Receita caseira da Tia Bete, fofinho por dentro e douradinho por fora. Perfeito para o café da manhã ou lanche da tarde. Feito com fubá selecionado e muito carinho.',
-    waMsg: 'Olá! Quero encomendar um Bolo de Fubá!',
-  },
-  'bolo-milho': {
-    cat: 'bolos', catLabel: 'Bolos Simples', emoji: '🌽',
-    name: 'Bolo de Milho',
-    desc: 'Cremoso, úmido e com aquele sabor inconfundível de milho verde. Uma das receitas mais pedidas da casa, ótimo para festas ou para adoçar o dia a dia.',
-    waMsg: 'Olá! Quero encomendar um Bolo de Milho!',
-  },
-  'bolo-chocolate-simples': {
-    cat: 'bolos', catLabel: 'Bolos Simples', emoji: '🍫',
-    name: 'Bolo de Chocolate',
-    desc: 'Massa de chocolate intenso, fofinha e úmida. Um clássico que nunca decepciona — para quem ama chocolate do jeito que a vovó fazia.',
-    waMsg: 'Olá! Quero encomendar um Bolo de Chocolate!',
-  },
-  'bolo-cenoura': {
-    cat: 'bolos', catLabel: 'Bolos Simples', emoji: '🥕',
-    name: 'Bolo de Cenoura',
-    desc: 'Levinho, macio e com uma cor lindíssima. A receita da Tia Bete garante uma massa super fofa que vai bem com ou sem cobertura.',
-    waMsg: 'Olá! Quero encomendar um Bolo de Cenoura!',
-  },
-  'bolo-laranja': {
-    cat: 'bolos', catLabel: 'Bolos Simples', emoji: '🍊',
-    name: 'Bolo de Laranja',
-    desc: 'Perfumado, cítrico e irresistível. A calda de laranja penetra na massa e deixa cada fatia ainda mais especial.',
-    waMsg: 'Olá! Quero encomendar um Bolo de Laranja!',
-  },
-  'bolo-limao': {
-    cat: 'bolos', catLabel: 'Bolos Simples', emoji: '🍋',
-    name: 'Bolo de Limão',
-    desc: 'Refrescante e equilibrado na medida certa entre o doce e o azedo. Uma escolha perfeita para quem gosta de sabores mais leves.',
-    waMsg: 'Olá! Quero encomendar um Bolo de Limão!',
-  },
-  'bolo-brigadeiro': {
-    cat: 'bolos', catLabel: 'Bolos Recheados', emoji: '🍫',
-    name: 'Bolo de Brigadeiro',
-    desc: 'Massa de chocolate recheada e coberta com brigadeiro gourmet cremoso. Para quem quer o máximo de chocolate em cada garfada.',
-    waMsg: 'Olá! Quero encomendar um Bolo de Brigadeiro!',
-  },
-  'bolo-ninho-morango': {
-    cat: 'bolos', catLabel: 'Bolos Recheados', emoji: '🍓',
-    name: 'Bolo Ninho com Morango',
-    desc: 'Massa branca fofinha, recheio cremoso de Ninho e morangos frescos que trazem um toque de frescor e sofisticação irresistível.',
-    waMsg: 'Olá! Quero encomendar um Bolo Ninho com Morango!',
-  },
-  'bolo-floresta-negra': {
-    cat: 'bolos', catLabel: 'Bolos Recheados', emoji: '🍒',
-    name: 'Floresta Negra',
-    desc: 'O clássico reinventado: massa de cacau, chantilly artesanal e cerejas ao maraschino. Elegante e delicioso para qualquer ocasião especial.',
-    waMsg: 'Olá! Quero encomendar um Bolo Floresta Negra!',
-  },
-  'bolo-cenoura-chocolate': {
-    cat: 'bolos', catLabel: 'Bolos Recheados', emoji: '🥕',
-    name: 'Cenoura com Cobertura de Chocolate',
-    desc: 'A combinação perfeita: a maciez do bolo de cenoura encontra a ganache intensa de chocolate. Sucesso garantido em qualquer mesa.',
-    waMsg: 'Olá! Quero encomendar Bolo de Cenoura com Cobertura de Chocolate!',
-  },
-  'bolo-mousse-maracuja': {
-    cat: 'bolos', catLabel: 'Bolos Recheados', emoji: '🌼',
-    name: 'Mousse de Maracujá',
-    desc: 'Massa leve com recheio e cobertura de mousse de maracujá, que equilibra o doce com a acidez tropical. Refrescante e memorável.',
-    waMsg: 'Olá! Quero encomendar Bolo Mousse de Maracujá!',
-  },
-  'bolo-prestígio': {
-    cat: 'bolos', catLabel: 'Bolos Recheados', emoji: '🥥',
-    name: 'Bolo Prestígio',
-    desc: 'Inspirado no bombom clássico: massa de chocolate ao leite, recheio cremoso de coco e cobertura de chocolate que derrete na boca.',
-    waMsg: 'Olá! Quero encomendar um Bolo Prestígio!',
-  },
-  'bolo-doce-leite': {
-    cat: 'bolos', catLabel: 'Bolos Recheados', emoji: '🍮',
-    name: 'Bolo de Doce de Leite',
-    desc: 'Para os amantes do caramelo: massa amanteigada recheada com doce de leite artesanal, na medida exata do que chamamos de perfeição.',
-    waMsg: 'Olá! Quero encomendar Bolo de Doce de Leite!',
-  },
-  'bolo-limao-merengue': {
-    cat: 'bolos', catLabel: 'Bolos Recheados', emoji: '🍋',
-    name: 'Limão com Merengue',
-    desc: 'A acidez do limão siciliano em harmonia com o merengue suíço levemente tostado. Sofisticado, leve e absolutamente delicioso.',
-    waMsg: 'Olá! Quero encomendar Bolo de Limão com Merengue!',
-  },
-  'bolo-festa-1andar': {
-    cat: 'bolos', catLabel: 'Bolos de Festa', emoji: '🎂',
-    name: 'Bolo de Festa 1 Andar',
-    desc: 'Decoração personalizada para o seu evento especial. Recheio e tema a escolher — cada bolo é uma peça única feita com dedicação.',
-    waMsg: 'Olá! Quero encomendar um Bolo de Festa 1 Andar! Pode me contar mais sobre os sabores e decorações?',
-  },
-  'bolo-festa-2andares': {
-    cat: 'bolos', catLabel: 'Bolos de Festa', emoji: '🎉',
-    name: 'Bolo de Festa 2 Andares',
-    desc: 'Imponente e delicioso. Dois andares com recheios à sua escolha e decoração artesanal personalizada para o grande dia.',
-    waMsg: 'Olá! Quero encomendar um Bolo de Festa 2 Andares!',
-  },
-  'bolo-debutante': {
-    cat: 'bolos', catLabel: 'Bolos de Festa', emoji: '👑',
-    name: 'Bolo de Debutante',
-    desc: 'O centro das atenções na festa mais especial da vida. Decoração luxuosa, recheio irresistível e tudo pensado para aquele momento inesquecível.',
-    waMsg: 'Olá! Quero encomendar um Bolo de Debutante! Pode me contar mais sobre as possibilidades?',
-  },
-  'bolo-tematico': {
-    cat: 'bolos', catLabel: 'Bolos de Festa', emoji: '🦄',
-    name: 'Bolo Temático Personalizado',
-    desc: 'Personagens, estilos, cores — qualquer tema vira arte nas mãos da Tia Bete. Entre em contato e conte o que está imaginando!',
-    waMsg: 'Olá! Quero encomendar um Bolo Temático Personalizado! Pode me contar como funciona?',
-  },
-
-  /* ---- DOCES ---- */
-  'brigadeiro': {
-    cat: 'doces', catLabel: 'Tradicionais de Festa', emoji: '🍫',
-    name: 'Brigadeiro Gourmet',
-    desc: 'O queridinho das festas elevado ao nível gourmet. Chocolate belga, leite condensado de qualidade e confeitos especiais. Disponível em vários sabores.',
-    waMsg: 'Olá! Quero encomendar Brigadeiros Gourmet!',
-  },
-  'quindim': {
-    cat: 'doces', catLabel: 'Tradicionais de Festa', emoji: '🌟',
-    name: 'Quindim',
-    desc: 'A receita tradicional brasileira com gema de ovo, coco e açúcar que resulta naquela consistência gelatinosinha e sabor inconfundível. Puro afeto.',
-    waMsg: 'Olá! Quero encomendar Quindins!',
-  },
-  'beijinho': {
-    cat: 'doces', catLabel: 'Tradicionais de Festa', emoji: '🥥',
-    name: 'Beijinho',
-    desc: 'O clássico de coco que acompanha todo aniversário que se preze. Cremoso, adocicado e com aquele cravo no topo que ninguém tira sem comer.',
-    waMsg: 'Olá! Quero encomendar Beijinhos!',
-  },
-  'bala-coco': {
-    cat: 'doces', catLabel: 'Tradicionais de Festa', emoji: '🍭',
-    name: 'Bala de Coco',
-    desc: 'Doce artesanal de coco com textura firme por fora e macia por dentro. Feita no ponto certo, como antigamente. Ideal para mesa de doces.',
-    waMsg: 'Olá! Quero encomendar Balas de Coco!',
-  },
-  'cajuzinho': {
-    cat: 'doces', catLabel: 'Tradicionais de Festa', emoji: '🥜',
-    name: 'Cajuzinho de Amendoim',
-    desc: 'O cajuzinho de festa que todo mundo ama! Amendoim moído com açúcar e chocolate, modelado no formato do fruto. Nostálgico e irresistível.',
-    waMsg: 'Olá! Quero encomendar Cajuzinhos de Amendoim!',
-  },
-  'torta-holandesa': {
-    cat: 'doces', catLabel: 'Tortas & Mousses', emoji: '🥧',
-    name: 'Torta Holandesa',
-    desc: 'Camadas generosas de creme de chocolate com biscoito, sem precisar ir ao forno. Gelada, cremosa e irresistível. Uma das favoritas da casa.',
-    waMsg: 'Olá! Quero encomendar uma Torta Holandesa!',
-  },
-  'mousse-maracuja': {
-    cat: 'doces', catLabel: 'Tortas & Mousses', emoji: '🌼',
-    name: 'Mousse de Maracujá',
-    desc: 'Leveza e sabor tropical em cada colherada. Mousse aerada com polpa de maracujá fresco, equilibrando doçura e acidez de forma impecável.',
-    waMsg: 'Olá! Quero encomendar Mousse de Maracujá!',
-  },
-  'mousse-limao': {
-    cat: 'doces', catLabel: 'Tortas & Mousses', emoji: '🍋',
-    name: 'Mousse de Limão',
-    desc: 'Fresco, cítrico e cremoso. A mousse de limão da Tia Bete é leve como uma nuvem e tem aquele azedinho irresistível que conquista todo mundo.',
-    waMsg: 'Olá! Quero encomendar Mousse de Limão!',
-  },
-  'mousse-chocolate': {
-    cat: 'doces', catLabel: 'Tortas & Mousses', emoji: '🍫',
-    name: 'Mousse de Chocolate',
-    desc: 'Intenso, aveludado e com textura de sonho. Feito com chocolate de qualidade que derrete na boca — a escolha perfeita para os chocólatras.',
-    waMsg: 'Olá! Quero encomendar Mousse de Chocolate!',
-  },
-  'torta-morango': {
-    cat: 'doces', catLabel: 'Tortas & Mousses', emoji: '🍓',
-    name: 'Torta de Morango',
-    desc: 'Base crocante de massa amanteigada, creme pasteleiro artesanal e morangos frescos por cima. Elegante e deliciosa em qualquer ocasião.',
-    waMsg: 'Olá! Quero encomendar uma Torta de Morango!',
-  },
-  'torta-frutas': {
-    cat: 'doces', catLabel: 'Tortas & Mousses', emoji: '🍇',
-    name: 'Torta de Frutas',
-    desc: 'Mix de frutas frescas da estação sobre creme e massa artesanal. Colorida, refrescante e linda para presentear ou servir em datas especiais.',
-    waMsg: 'Olá! Quero encomendar uma Torta de Frutas!',
-  },
-  'maca-amor': {
-    cat: 'doces', catLabel: 'Caramelizados', emoji: '🍎',
-    name: 'Maçã do Amor',
-    desc: 'A rainha das festas juninas e quermesses! Maçã crocante envolta em caramelo vermelho brilhante. Nostalgia pura em cada mordida.',
-    waMsg: 'Olá! Quero encomendar Maçãs do Amor!',
-  },
-  'morango-amor': {
-    cat: 'doces', catLabel: 'Caramelizados', emoji: '🍓',
-    name: 'Morango do Amor',
-    desc: 'A versão sofisticada da maçã do amor: morangos frescos mergulhados em calda crocante de caramelo. Lindo, delicioso e irresistível.',
-    waMsg: 'Olá! Quero encomendar Morangos do Amor!',
-  },
-  'carolina': {
-    cat: 'doces', catLabel: 'Assados Recheados', emoji: '🧁',
-    name: 'Carolina',
-    desc: 'Casquinha crocante de massa choux recheada com creme de confeiteiro artesanal. Leve por fora, cremosa por dentro — uma delícia refinada.',
-    waMsg: 'Olá! Quero encomendar Carolinas!',
-  },
-  'bomba-chocolate': {
-    cat: 'doces', catLabel: 'Assados Recheados', emoji: '🍩',
-    name: 'Bomba de Chocolate',
-    desc: 'Massa choux alongada, recheada com creme e coberta com ganache de chocolate. A versão brasileira do éclair francês — impossível resistir.',
-    waMsg: 'Olá! Quero encomendar Bombas de Chocolate!',
-  },
-
-  /* ---- SALGADOS ---- */
-  'coxinha-mini': {
-    cat: 'salgados', catLabel: 'Mini Salgados', emoji: '🍗',
-    name: 'Coxinha Mini',
-    desc: 'A coxinha de festa no tamanho perfeito para um petisco. Massa fininha, recheio generoso de frango desfiado e muito tempero. Vendida por cento.',
-    waMsg: 'Olá! Quero consultar o preço de Coxinha Mini por cento!',
-  },
-  'bolinha-queijo-mini': {
-    cat: 'salgados', catLabel: 'Mini Salgados', emoji: '🧀',
-    name: 'Bolinha de Queijo',
-    desc: 'Crocante por fora e com aquele queijo derretido por dentro. A bolinha de queijo da Tia Bete é uma das mais pedidas em festas e eventos.',
-    waMsg: 'Olá! Quero consultar o preço de Bolinha de Queijo por cento!',
-  },
-  'quibe-mini': {
-    cat: 'salgados', catLabel: 'Mini Salgados', emoji: '🥙',
-    name: 'Quibe Mini',
-    desc: 'Massa de trigo e carne com temperos árabes tradicionais. Crocante por fora, suculento por dentro. Perfeito para comidinhas de festa.',
-    waMsg: 'Olá! Quero consultar o preço de Quibe Mini por cento!',
-  },
-  'risole-mini': {
-    cat: 'salgados', catLabel: 'Mini Salgados', emoji: '🥟',
-    name: 'Risole Mini',
-    desc: 'Massa fininha frita na hora, recheada com frango, camarão ou carne. Crocante e saboroso do jeito certo para animar qualquer evento.',
-    waMsg: 'Olá! Quero consultar o preço de Risole Mini por cento!',
-  },
-  'pastel': {
-    cat: 'salgados', catLabel: 'Salgados Especiais', emoji: '🥐',
-    name: 'Pastel',
-    desc: 'Massa crocante frita com recheio a escolher. Feito na hora com ingredientes frescos — o pastel da Tia Bete é famoso por aqui!',
-    waMsg: 'Olá! Quero encomendar Pastéis! Quais sabores têm disponíveis?',
-  },
-  'empada': {
-    cat: 'salgados', catLabel: 'Salgados Especiais', emoji: '🥧',
-    name: 'Empada',
-    desc: 'Casquinha de massa amanteigada assada, recheada com frango ou palmito. Macia, saborosa e com aquele sabor caseiro que aquece o coração.',
-    waMsg: 'Olá! Quero encomendar Empadas!',
-  },
-  'mini-pizza': {
-    cat: 'salgados', catLabel: 'Salgados Especiais', emoji: '🍕',
-    name: 'Mini Pizza',
-    desc: 'Massa artesanal fininha, molho temperado e queijo que derrete. As mini pizzas da Tia Bete fazem sucesso em festas e eventos de todos os tamanhos.',
-    waMsg: 'Olá! Quero encomendar Mini Pizzas!',
-  },
-  'coxinha-grande': {
-    cat: 'salgados', catLabel: 'Salgados Especiais', emoji: '🍗',
-    name: 'Coxinha Grande',
-    desc: 'A rainha dos salgados no tamanho que merece. Recheio generoso de frango desfiado temperado, massa no ponto certo — para comer com muito prazer.',
-    waMsg: 'Olá! Quero encomendar Coxinhas Grandes!',
-  },
-  'risole-grande': {
-    cat: 'salgados', catLabel: 'Salgados Especiais', emoji: '🥟',
-    name: 'Risole Grande',
-    desc: 'O risole em tamanho de refeição — crocante, bem recheado e frito na hora. Uma opção generosa para quem não quer ficar sem.',
-    waMsg: 'Olá! Quero encomendar Risoles Grandes!',
-  },
-  'quibe-grande': {
-    cat: 'salgados', catLabel: 'Salgados Especiais', emoji: '🥙',
-    name: 'Quibe Grande',
-    desc: 'O tradicional quibe árabe em tamanho família. Crocante por fora, suculento por dentro e temperado com amor. Ótimo para levar pra casa.',
-    waMsg: 'Olá! Quero encomendar Quibes Grandes!',
-  },
-  'fogaca': {
-    cat: 'salgados', catLabel: 'Salgados Assados', emoji: '🥖',
-    name: 'Fogaça',
-    desc: 'Pão assado fofinho com cobertura crocante e recheio de calabresa ou frango. A fogaça da Tia Bete é um petisco que vira refeição de tão boa.',
-    waMsg: 'Olá! Quero encomendar Fogaças!',
-  },
-  'esfiha-aberta': {
-    cat: 'salgados', catLabel: 'Salgados Assados', emoji: '🫓',
-    name: 'Esfiha Aberta',
-    desc: 'Massa artesanal assada com cobertura de carne temperada ou queijo. Crocante nas bordas e macia no centro — impossível comer só uma.',
-    waMsg: 'Olá! Quero encomendar Esfihas Abertas!',
-  },
-  'esfiha-fechada': {
-    cat: 'salgados', catLabel: 'Salgados Assados', emoji: '🥙',
-    name: 'Esfiha Fechada',
-    desc: 'Massa artesanal dobrada e assada envolvendo um recheio suculento. Macia, douradinha e com aquele aroma de forno que faz a boca água.',
-    waMsg: 'Olá! Quero encomendar Esfihas Fechadas!',
-  },
-  'pao-frios': {
-    cat: 'salgados', catLabel: 'Pães Caseiros', emoji: '🥪',
-    name: 'Pão de Frios Recheado',
-    desc: 'Pão de massa caseira recheado com presunto, queijo e outros frios. Ideal para festas, cafés da manhã especiais e lanchinhos que impressionam.',
-    waMsg: 'Olá! Quero encomendar Pão de Frios Recheado!',
-  },
-  'pao-forma': {
-    cat: 'salgados', catLabel: 'Pães Caseiros', emoji: '🍞',
-    name: 'Pão de Forma Caseiro',
-    desc: 'Feito com fermento natural e assado artesanalmente. Muito mais macio e saboroso que o industrializado — aquele pão que a família toda ama.',
-    waMsg: 'Olá! Quero encomendar Pão de Forma Caseiro!',
-  },
-  'panetone-doce': {
-    cat: 'salgados', catLabel: 'Pães Caseiros', emoji: '🎄',
-    name: 'Panetone Doce',
-    desc: 'O clássico natalino feito com massa artesanal e muito carinho. Com frutas cristalizadas e uvas passas, perfumado e fofinho como deve ser.',
-    waMsg: 'Olá! Quero encomendar um Panetone Doce!',
-  },
-  'panetone-recheado': {
-    cat: 'salgados', catLabel: 'Pães Caseiros', emoji: '🎁',
-    name: 'Panetone Recheado',
-    desc: 'O panetone artesanal com um plus especial: recheado com chocolate, doce de leite ou creme de avelã. Uma surpresa deliciosa a cada fatia.',
-    waMsg: 'Olá! Quero encomendar um Panetone Recheado! Quais sabores têm disponíveis?',
-  },
-};
-
-/* ----------------------------------------------------------
-   RECOMENDADOS por categoria (até 4 IDs)
-   ---------------------------------------------------------- */
-const RECOMMENDED = {
-  bolos:    ['bolo-brigadeiro', 'bolo-ninho-morango', 'bolo-floresta-negra', 'bolo-mousse-maracuja'],
-  doces:    ['brigadeiro', 'torta-holandesa', 'mousse-maracuja', 'maca-amor'],
-  salgados: ['coxinha-grande', 'empada', 'esfiha-fechada', 'pao-frios'],
-};
-
-/* ----------------------------------------------------------
-   RÓTULOS DE CATEGORIA para o breadcrumb
-   ---------------------------------------------------------- */
+/* RÓTULOS DE CATEGORIA para o breadcrumb */
 const CAT_LABELS = {
   bolos:    { label: 'Bolos',    href: 'bolos.html' },
   doces:    { label: 'Doces',    href: 'doces.html' },
   salgados: { label: 'Salgados', href: 'salgados.html' },
 };
 
-/* ----------------------------------------------------------
-   INICIALIZAÇÃO
-   ---------------------------------------------------------- */
-(function () {
+/* RECOMENDADOS por categoria */
+const RECOMMENDED = {
+  bolos:    ['bolo-brigadeiro', 'bolo-ninho-morango', 'bolo-floresta-negra', 'bolo-mousse-maracuja'],
+  doces:    ['brigadeiro', 'torta-holandesa', 'mousse-maracuja', 'maca-amor'],
+  salgados: ['coxinha-grande', 'empada', 'esfiha-fechada', 'pao-frios'],
+};
+
+/* INICIALIZAÇÃO ASSÍNCRONA */
+document.addEventListener('DOMContentLoaded', async () => {
   const params  = new URLSearchParams(location.search);
   const id      = params.get('id');
   const catKey  = params.get('cat');
-  const produto = CATALOG[id];
 
-  if (!produto) {
-    document.getElementById('product-title').textContent = 'Produto não encontrado';
-    document.getElementById('product-desc').textContent  = 'Volte para a listagem e escolha um produto.';
-    return;
-  }
+  try {
+    // 1. Busca os dados do arquivo estático JSON
+    const response = await fetch('../data/cardapio.json');
+    if (!response.ok) throw new Error('Falha ao carregar o cardápio');
+    
+    const CATALOG = await response.json();
+    const produto = CATALOG[id];
 
-  const phone = '5511972710172';
+    // 2. Se o produto não existir no JSON
+    if (!produto) {
+      document.getElementById('product-title').textContent = 'Produto não encontrado';
+      document.getElementById('product-desc').textContent  = 'Volte para a listagem e escolha um produto.';
+      return;
+    }
 
-  /* Título da aba */
-  document.title = `${produto.name} | Tia Bete Bolos`;
+    const phone = '5511972710172';
 
-  /* Meta description */
-  document.querySelector('meta[name="description"]').content =
-    `${produto.name} — ${produto.desc.slice(0, 120)}...`;
+    // 3. Preenche a página com os dados
+    document.title = `${produto.name} | Tia Bete Bolos`;
+    document.querySelector('meta[name="description"]').content = `${produto.name} — ${produto.desc.slice(0, 120)}...`;
+    
+    document.getElementById('product-emoji').textContent = produto.emoji;
+    document.getElementById('product-category').textContent = produto.catLabel;
+    document.getElementById('product-title').textContent = produto.name;
+    document.getElementById('product-desc').textContent  = produto.desc;
 
-  /* Emoji / placeholder */
-  document.getElementById('product-emoji').textContent = produto.emoji;
+    // 4. Configura Links do WhatsApp
+    const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(produto.waMsg)}`;
+    document.getElementById('product-wa-btn').href = waUrl;
+    
+    const floatBtn = document.getElementById('wa-float');
+    if(floatBtn) floatBtn.href = waUrl;
 
-  /* Categoria badge */
-  document.getElementById('product-category').textContent = produto.catLabel;
+    // 5. Configura Breadcrumb
+    const cat = CAT_LABELS[catKey] || CAT_LABELS[produto.cat] || { label: 'Produtos', href: '#' };
+    document.getElementById('breadcrumb').innerHTML = `
+      <a href="../index.html">Início</a>
+      <span class="product-detail__breadcrumb-sep" aria-hidden="true">›</span>
+      <a href="${cat.href}">${cat.label}</a>
+      <span class="product-detail__breadcrumb-sep" aria-hidden="true">›</span>
+      <span aria-current="page">${produto.name}</span>
+    `;
 
-  /* Título e descrição */
-  document.getElementById('product-title').textContent = produto.name;
-  document.getElementById('product-desc').textContent  = produto.desc;
+    // 6. Monta Grid de Recomendados
+    const recIds  = (RECOMMENDED[produto.cat] || []).filter(rid => rid !== id).slice(0, 4);
+    const grid    = document.getElementById('recommended-grid');
+    const recLabel = document.getElementById('recommended-label');
+    recLabel.textContent = `Outros ${cat.label}`;
 
-  /* Botão WhatsApp */
-  const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(produto.waMsg)}`;
-  document.getElementById('product-wa-btn').href = waUrl;
-  document.getElementById('wa-float').href = waUrl;
-
-  /* Breadcrumb */
-  const cat = CAT_LABELS[catKey] || CAT_LABELS[produto.cat] || { label: 'Produtos', href: '#' };
-  document.getElementById('breadcrumb').innerHTML = `
-    <a href="../index.html">Início</a>
-    <span class="product-detail__breadcrumb-sep" aria-hidden="true">›</span>
-    <a href="${cat.href}">${cat.label}</a>
-    <span class="product-detail__breadcrumb-sep" aria-hidden="true">›</span>
-    <span aria-current="page">${produto.name}</span>
-  `;
-
-  /* Recomendados */
-  const recIds  = (RECOMMENDED[produto.cat] || []).filter(rid => rid !== id).slice(0, 4);
-  const grid    = document.getElementById('recommended-grid');
-  const recLabel = document.getElementById('recommended-label');
-  recLabel.textContent = `Outros ${cat.label}`;
-
-  if (recIds.length === 0) {
-    document.getElementById('recommended-section').style.display = 'none';
-  } else {
-    grid.innerHTML = recIds.map(rid => {
-      const p = CATALOG[rid];
-      if (!p) return '';
-      const rWaUrl = `https://wa.me/${phone}?text=${encodeURIComponent(p.waMsg)}`;
-      return `
-        <article class="pcard">
-          <a href="produto.html?id=${rid}&cat=${p.cat}" class="pcard__img-link" aria-label="Ver ${p.name}">
-            <div class="pcard__placeholder">
-              <span class="pcard__placeholder-icon">${p.emoji}</span>
-              <span class="pcard__placeholder-text">foto em breve</span>
+    if (recIds.length === 0) {
+      document.getElementById('recommended-section').style.display = 'none';
+    } else {
+      grid.innerHTML = recIds.map(rid => {
+        const p = CATALOG[rid];
+        if (!p) return '';
+        const rWaUrl = `https://wa.me/${phone}?text=${encodeURIComponent(p.waMsg)}`;
+        
+        return `
+          <article class="pcard">
+            <a href="produto.html?id=${rid}&cat=${p.cat}" class="pcard__img-link" aria-label="Ver ${p.name}">
+              <div class="pcard__placeholder">
+                <span class="pcard__placeholder-icon">${p.emoji}</span>
+                <span class="pcard__placeholder-text">foto em breve</span>
+              </div>
+              <span class="pcard__badge">${p.catLabel}</span>
+            </a>
+            <div class="pcard__body">
+              <h3 class="pcard__name">${p.name}</h3>
+              <a href="${rWaUrl}" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
             </div>
-            <span class="pcard__badge">${p.catLabel}</span>
-          </a>
-          <div class="pcard__body">
-            <h3 class="pcard__name">${p.name}</h3>
-            <a href="${rWaUrl}" class="pcard__btn" target="_blank" rel="noopener noreferrer">Eu quero</a>
-          </div>
-        </article>`;
-    }).join('');
-  }
+          </article>`;
+      }).join('');
+    }
 
-})();
+  } catch (error) {
+    console.error("Erro na aplicação:", error);
+    document.getElementById('product-title').textContent = 'Erro ao carregar o cardápio';
+    document.getElementById('product-desc').textContent  = 'Por favor, recarregue a página ou tente novamente mais tarde.';
+  }
+});
