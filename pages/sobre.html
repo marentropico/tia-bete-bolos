@@ -3,49 +3,281 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Conheça a história da Tia Bete – Mais de 20 anos dedicados à confeitaria e chocolataria artesanal em São Paulo." />
+  <meta name="description" content="Conheça a história de Elisabete Figueroa, a Tia Bete — mais de 25 anos dedicados à confeitaria artesanal em São Paulo, feitos com amor e muito estudo." />
   <title>Nossa História | Tia Bete Bolos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/reset.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/reset.css" />
   <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
   <link rel="stylesheet" href="../css/sobre.css" />
 </head>
 <body>
 
   <header id="main-header"></header>
 
-  <!-- ========== HERO – Nossa História ========== -->
-  <section id="hero-sobre">
-    <!-- Foto da Tia Bete + frase marcante sobre a história -->
-  </section>
+  <main id="main">
 
-  <!-- ========== LINHA DO TEMPO ========== -->
-  <section id="linha-do-tempo">
-    <!-- Mais de 20 anos de história em formato visual de timeline -->
-  </section>
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+    <section class="sobre-hero" aria-label="Nossa história">
+      <div class="container sobre-hero__inner">
 
-  <!-- ========== VALORES & DIFERENCIAIS ========== -->
-  <section id="valores">
-    <!-- Cards: Ingredientes frescos | Receitas exclusivas | Feito com amor | Atendimento personalizado -->
-  </section>
+        <!-- Foto (esquerda) -->
+        <div class="sobre-hero__foto" data-reveal>
+          <!--
+            Quando a foto estiver pronta, substitua o placeholder abaixo por:
+            <img
+              src="../assets/images/sobre/tia-bete.jpg"
+              alt="Elisabete Figueroa, a Tia Bete, em sua confeitaria"
+              class="sobre-hero__img"
+            />
+          -->
+          <div class="sobre-hero__placeholder" aria-hidden="true">
+            <span class="sobre-hero__placeholder-emoji">👩‍🍳</span>
+            <span class="sobre-hero__placeholder-label">Foto da Tia Bete<br>em breve</span>
+          </div>
+          <div class="sobre-hero__foto-detalhe" aria-hidden="true"></div>
+        </div>
 
-  <!-- ========== GALERIA BASTIDORES ========== -->
-  <section id="galeria-bastidores">
-    <!-- Fotos do processo, cozinha, produção artesanal -->
-  </section>
+        <!-- Texto (direita) -->
+        <div class="sobre-hero__texto">
+          <span class="section-label" data-reveal>Nossa história</span>
+          <h1 class="sobre-hero__titulo" data-reveal>
+            Feito com amor<br>
+            <em>desde o primeiro pastel</em>
+          </h1>
+          <p class="sobre-hero__lead" data-reveal>
+            Meu nome é <strong>Elisabete Figueroa</strong> — mas todo mundo me conhece como
+            <strong>Tia Bete</strong>. Há mais de 25 anos, o que começou como uma forma
+            de ajudar em casa durante minha primeira gravidez se tornou a
+            missão da minha vida: adoçar os momentos especiais das pessoas
+            com muito carinho e dedicação.
+          </p>
+          <p class="sobre-hero__texto-body" data-reveal>
+            Comecei vendendo pastéis para vizinhos e conhecidos no Jardim Belcito.
+            Logo percebi que cozinhar não era só uma necessidade — era uma vocação.
+            Assim que pude, fui estudar. Cursos de confeitaria, chocolataria,
+            panificação, empreendedorismo. E não parei mais.
+          </p>
+          <div class="sobre-hero__numeros" data-reveal>
+            <div class="sobre-numero">
+              <span class="sobre-numero__valor">+25</span>
+              <span class="sobre-numero__label">anos de história</span>
+            </div>
+            <div class="sobre-numero">
+              <span class="sobre-numero__valor">100%</span>
+              <span class="sobre-numero__label">artesanal</span>
+            </div>
+            <div class="sobre-numero">
+              <span class="sobre-numero__valor">♥</span>
+              <span class="sobre-numero__label">feito por amor</span>
+            </div>
+          </div>
+        </div>
 
-  <!-- ========== CTA CONTATO ========== -->
-  <section id="cta-contato">
-    <!-- Convite para entrar em contato -->
-  </section>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         LINHA DO TEMPO
+         ===================================================== -->
+    <section class="sobre-timeline" aria-label="Nossa trajetória">
+      <div class="container">
+
+        <div class="section-header" style="text-align:center" data-reveal>
+          <span class="section-label">Trajetória</span>
+          <h2 class="section-title">Uma história construída<br><em>passo a passo</em></h2>
+        </div>
+
+        <ol class="timeline" role="list">
+
+          <li class="timeline-item timeline-item--right" data-reveal>
+            <div class="timeline-item__dot" aria-hidden="true"></div>
+            <div class="timeline-item__card">
+              <span class="timeline-item__ano">~2000</span>
+              <h3 class="timeline-item__titulo">O começo de tudo</h3>
+              <p class="timeline-item__texto">
+                Durante a primeira gravidez, Elisabete começou a vender pastéis
+                artesanais para vizinhos e amigos do Jardim Belcito. O que era
+                uma renda extra virou uma descoberta: ela nasceu pra isso.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item timeline-item--left" data-reveal>
+            <div class="timeline-item__dot" aria-hidden="true"></div>
+            <div class="timeline-item__card">
+              <span class="timeline-item__ano">Anos seguintes</span>
+              <h3 class="timeline-item__titulo">Estudo e especialização</h3>
+              <p class="timeline-item__texto">
+                Assim que pôde, voltou a estudar — cursos de confeitaria,
+                chocolataria e panificação. Cada aprendizado foi direto para
+                a cozinha, para as mãos, e para a mesa dos clientes.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item timeline-item--right" data-reveal>
+            <div class="timeline-item__dot" aria-hidden="true"></div>
+            <div class="timeline-item__card">
+              <span class="timeline-item__ano">O produto que ficou</span>
+              <h3 class="timeline-item__titulo">O bolo que todo mundo pede</h3>
+              <p class="timeline-item__texto">
+                Entre tantas receitas testadas e aprovadas, um produto se destacou
+                e virou marca registrada — peça para a Tia Bete qual é o favorito
+                de quem já conhece. Há quem venha de longe só por ele.
+              </p>
+              <!-- 
+                ✏️ MARCOS: substitua o parágrafo acima com o produto real
+                quando souber qual é o favorito histórico da Tia Bete.
+              -->
+            </div>
+          </li>
+
+          <li class="timeline-item timeline-item--left" data-reveal>
+            <div class="timeline-item__dot" aria-hidden="true"></div>
+            <div class="timeline-item__card">
+              <span class="timeline-item__ano">Hoje</span>
+              <h3 class="timeline-item__titulo">Negócio de verdade, coração de sempre</h3>
+              <p class="timeline-item__texto">
+                Mais de duas décadas depois, a Tia Bete Bolos é uma confeitaria
+                completa — bolos, doces, salgados, pães e chocolataria especial
+                de Páscoa. O que não mudou: cada encomenda ainda é feita com as
+                mesmas mãos e o mesmo carinho do primeiro pastel.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item timeline-item--right" data-reveal>
+            <div class="timeline-item__dot timeline-item__dot--destaque" aria-hidden="true"></div>
+            <div class="timeline-item__card timeline-item__card--destaque">
+              <span class="timeline-item__ano">2026</span>
+              <h3 class="timeline-item__titulo">A confeitaria chega à internet</h3>
+              <p class="timeline-item__texto">
+                Para que ainda mais pessoas possam descobrir essa história —
+                e encomendar um pedacinho dela —, a Tia Bete Bolos ganhou
+                seu espaço online. Bem-vindo.
+              </p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         VALORES
+         ===================================================== -->
+    <section class="sobre-valores" aria-label="Nossos valores">
+      <div class="container">
+
+        <div class="section-header" style="text-align:center" data-reveal>
+          <span class="section-label">O que nos move</span>
+          <h2 class="section-title">Por que a Tia Bete<br><em>é diferente</em></h2>
+        </div>
+
+        <div class="valores-grid">
+
+          <div class="valor-card" data-reveal>
+            <div class="valor-card__icon" aria-hidden="true">🌾</div>
+            <div class="valor-card__corpo">
+              <h3 class="valor-card__titulo">Ingredientes selecionados</h3>
+              <p class="valor-card__texto">
+                Nada industrializado entra na receita sem avaliação. Cada ingrediente
+                é escolhido pelo sabor, frescor e qualidade — porque o resultado
+                aparece em cada mordida.
+              </p>
+            </div>
+          </div>
+
+          <div class="valor-card" data-reveal data-reveal-delay="1">
+            <div class="valor-card__icon" aria-hidden="true">🤲</div>
+            <div class="valor-card__corpo">
+              <h3 class="valor-card__titulo">100% artesanal</h3>
+              <p class="valor-card__texto">
+                Cada bolo, cada trufa, cada pão é feito à mão. Não há linha de
+                produção, não há atalhos. Há receita, técnica e dedicação —
+                do início ao fim.
+              </p>
+            </div>
+          </div>
+
+          <div class="valor-card" data-reveal data-reveal-delay="2">
+            <div class="valor-card__icon" aria-hidden="true">⚖️</div>
+            <div class="valor-card__corpo">
+              <h3 class="valor-card__titulo">Preço justo</h3>
+              <p class="valor-card__texto">
+                Qualidade artesanal não precisa custar absurdo. A Tia Bete
+                acredita que todo mundo merece comer bem — e pratica preços
+                honestos para uma qualidade que você sente.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         CITAÇÃO / ASSINATURA
+         ===================================================== -->
+    <section class="sobre-citacao" aria-label="Mensagem da Tia Bete">
+      <div class="container">
+        <blockquote class="citacao" data-reveal>
+          <p class="citacao__texto">
+            "Cozinhar é um ato de amor. Cada encomenda que sai daqui
+            carrega um pedaço da minha história — e do carinho que
+            aprendi a colocar em tudo que faço."
+          </p>
+          <footer class="citacao__autora">
+            <span class="citacao__nome">Elisabete Figueroa</span>
+            <span class="citacao__titulo">a Tia Bete</span>
+          </footer>
+        </blockquote>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+         ===================================================== -->
+    <section class="sobre-cta" aria-label="Faça sua encomenda">
+      <div class="container sobre-cta__inner" data-reveal>
+        <div>
+          <h2 class="sobre-cta__titulo">
+            Agora que você conhece<br>
+            <em>a história</em>, que tal provar?
+          </h2>
+          <p class="sobre-cta__subtitulo">
+            Cada encomenda é única — feita para o seu momento especial.
+          </p>
+        </div>
+        <div class="sobre-cta__botoes">
+          <a href="contato.html" class="btn btn--primary btn--lg">
+            Fazer uma encomenda
+          </a>
+          <a href="../index.html#categorias" class="btn btn--outline btn--lg">
+            Ver produtos
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <footer id="main-footer"></footer>
 
   <script src="../js/nav.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/menu.js"></script>
 
 </body>
 </html>
