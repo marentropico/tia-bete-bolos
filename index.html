@@ -24,37 +24,48 @@
 </head>
 <body>
   
-  <!-- ======================================================
-       HERO
-       ====================================================== -->
-  <main id="main">
-
+<!-- ======================================================
+         HERO
+         ====================================================== -->
     <section class="hero" aria-label="Apresentação">
+      <!-- Coluna Única de Conteúdo (No desktop, o CSS vai dividir em duas) -->
       <div class="hero__content">
-        <span class="hero__eyebrow">✦ 20 anos de amor e dedicação</span>
-        <h1 class="hero__title">
-          Feito com carinho,<br>
-          <em>do jeito que você ama</em>
-        </h1>
-        <p class="hero__description">
-          Bolos artesanais, doces e chocolataria especial — cada receita
-          preparada com ingredientes selecionados e o carinho de quem faz
-          pra família.
-        </p>
-        <div class="hero__actions">
-          <a href="pages/chocolataria.html" class="btn btn--primary btn--lg">
-            🍫 Ver Páscoa 2026
-          </a>
-          <a href="pages/bolos.html" class="btn btn--outline btn--lg">
-            Nossos Bolos
-          </a>
+        
+        <!-- 1. Eyebrow e Título (Sempre no topo) -->
+        <div class="hero__header">
+          <span class="hero__eyebrow">✦ 20 anos de amor e dedicação</span>
+          <h1 class="hero__title">
+            Feito com carinho,<br>
+            <em>do jeito que você ama</em>
+          </h1>
         </div>
-      </div>
-      <div class="hero__image" aria-hidden="true">
-        <!-- Imagem principal do hero — adicionar depois -->
-        <div class="hero__image-placeholder">
-          <span>🎂</span>
+
+        <!-- 2. Hero Image -->
+        <div class="hero__image" aria-hidden="true">
+          <img 
+            src="assets/images/hero/bete-davi.webp" 
+            alt="Bolos artesanais da Tia Bete" 
+            class="hero__img-real" 
+          />
         </div>
+
+        <!-- 3. Descrição e Botões (Embaixo da imagem no mobile) -->
+        <div class="hero__footer">
+          <p class="hero__description">
+            Bolos artesanais, doces e chocolataria especial — cada receita
+            preparada com ingredientes selecionados e o carinho de quem faz
+            pra família.
+          </p>
+          <div class="hero__actions">
+            <a href="pages/chocolataria.html" class="btn btn--primary btn--lg">
+              🍫 Ver Páscoa 2026
+            </a>
+            <a href="pages/bolos.html" class="btn btn--outline btn--lg">
+              Nossos Bolos
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
 
