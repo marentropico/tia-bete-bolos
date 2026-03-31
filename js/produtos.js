@@ -42,8 +42,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 3. Preenche a página com os dados
     document.title = `${produto.name} | Tia Bete Bolos`;
     document.querySelector('meta[name="description"]').content = `${produto.name} — ${produto.desc.slice(0, 120)}...`;
-    
-    document.getElementById('product-emoji').textContent = produto.emoji;
+    // Imagem com fallback para emoji
+    const imgWrap = document.getElementById('product-img-wrap');
+    const imagePath = `../assets/images/${produto.cat}/${id}.webp`;
+
+    imgWrap.innerHTML = `
+      <img 
+        src="${imagePath}" 
+        alt="${produto.name}" 
+        class="product-detail__img" 
+        onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'product-detail__img-placeholder\\'><span>${produto.emoji}</span></div>';"
+      />
+    `;
     document.getElementById('product-category').textContent = produto.catLabel;
     document.getElementById('product-title').textContent = produto.name;
     document.getElementById('product-desc').textContent  = produto.desc;
