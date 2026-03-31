@@ -9,7 +9,6 @@ const swiper = new Swiper('#categoriesSwiper', {
   
   /* Modo infinito */
   loop: true,
-  loopFillGroupWithBlank: false,
 
   /* Números de slides visíveis (responsivo) */
   slidesPerView: 1,
@@ -74,44 +73,3 @@ const swiper = new Swiper('#categoriesSwiper', {
   },
 
 });
-
-const paginationElement = document.querySelector('.swiper-pagination');
-
-function adjustSwiperPagination() {
-  if (!paginationElement) return;
-
-  const bullets = paginationElement.querySelectorAll('.swiper-pagination-bullet');
-  const total = bullets.length;
-  if (!total) return;
-
-  // Largura máxima fixa de 709px (6cm) para todos os dots
-  const maxPaginationWidth = 709;
-  const availableWidth = maxPaginationWidth;
-  const minGap = 0.5;
-  const maxGap = 4;
-  const minSize = 2;
-  const maxSize = 6;
-
-  // Calcula tamanho ideal dos bullets
-  let size = Math.floor((availableWidth - (total - 1) * minGap) / total);
-  size = Math.max(minSize, Math.min(maxSize, size));
-
-  // Calcula gap ideal
-  let gap = Math.floor((availableWidth - total * size) / Math.max(1, total - 1));
-  gap = Math.max(minGap, Math.min(maxGap, gap));
-
-  // Ajusta se necessário para caber exatamente
-  while ((total * size + (total - 1) * gap) > availableWidth && size > minSize) {
-    size -= 1;
-    gap = Math.max(minGap, Math.min(maxGap, Math.floor((availableWidth - total * size) / Math.max(1, total - 1))));
-  }
-
-  paginationElement.style.setProperty('--swiper-bullet-size', `${size}px`);
-  paginationElement.style.setProperty('--swiper-bullet-gap', `${gap}px`);
-  paginationElement.style.setProperty('--swiper-max-width', `${maxPaginationWidth}px`);
-  paginationElement.style.gap = `${gap}px`;
-}
-
-swiper.on('slideChange', adjustSwiperPagination);
-window.addEventListener('resize', adjustSwiperPagination);
-adjustSwiperPagination();
