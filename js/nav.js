@@ -1,12 +1,18 @@
 /* ============================================================
-   TIA BETE BOLOS — Nav Dinâmica
-   Injeta a nav e o footer em todas as páginas de pages/
+  TIA BETE BOLOS — Nav Dinâmica
+  Injeta a nav e o footer em todas as páginas de pages/
    ============================================================ */
 
 (function () {
   const isSubpage = window.location.pathname.includes('/pages/');
   const base = isSubpage ? '../' : '';
   const current = window.location.pathname.split('/').pop() || 'index.html';
+  // Favicon dinâmico — corrige o caminho independente de onde a página está
+  const favicon = document.querySelector('link[rel="icon"]') || document.createElement('link');
+  favicon.rel = 'icon';
+  favicon.type = 'image/x-icon';
+  favicon.href = `${base}favicon.ico`;
+  if (!favicon.parentNode) document.head.appendChild(favicon);
 
   const links = [
     { href: `${base}index.html`,              label: 'Início',         file: 'index.html' },
@@ -47,7 +53,7 @@
   if (!document.querySelector('.nav')) {
     document.body.insertAdjacentHTML('afterbegin', navHTML);
   }
- 
+
   // ── FOOTER ────────────────────────────────────────────────
 
   const ICONS = {
@@ -67,7 +73,7 @@
     footerEl.innerHTML = `
       <div class="container">
         <div class="footer__grid">
- 
+
           <div class="footer__brand">
             <a href="${base}index.html" class="footer__logo">
               <img src="${base}assets/images/logo/logo.png" alt="Tia Bete Bolos" class="footer__logo-img" width="56" height="56"/>
@@ -86,7 +92,7 @@
               </a>
             </div>
           </div>
- 
+
           <div>
             <h3 class="footer__col-title">Produtos</h3>
             <ul class="footer__links" role="list">
@@ -96,7 +102,7 @@
               <li><a href="${base}pages/doces.html"        class="footer__link">Doces & Confeitaria</a></li>
             </ul>
           </div>
- 
+
           <div>
             <h3 class="footer__col-title">A Loja</h3>
             <ul class="footer__links" role="list">
@@ -105,7 +111,7 @@
               <li><a href="${base}pages/contato.html" class="footer__link">Encomendas</a></li>
             </ul>
           </div>
- 
+
           <div>
             <h3 class="footer__col-title">Contato</h3>
             <div class="footer__contact-item">
@@ -120,7 +126,7 @@
               ${icon('whatsapp', 20)} Pedir pelo WhatsApp
             </a>
           </div>
- 
+
         </div>
         <div class="footer__bottom">
           <span>© 2026 Tia Bete Bolos. Todos os direitos reservados.</span>
@@ -128,16 +134,16 @@
         </div>
       </div>`;
   }
- 
+
   // ── BOTÃO FLUTUANTE WHATSAPP ───────────────────────────────
   if (!document.querySelector('.whatsapp-float')) {
     document.body.insertAdjacentHTML('beforeend', `
       <a href="https://wa.me/5511972710172?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido!"
-         class="whatsapp-float"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="Fale conosco pelo WhatsApp"
-         title="Fale conosco pelo WhatsApp">${icon('whatsapp', 28)}
+        class="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Fale conosco pelo WhatsApp"
+        title="Fale conosco pelo WhatsApp">${icon('whatsapp', 28)}
       </a>`);
   }
 })();
