@@ -4,6 +4,56 @@
    ============================================================ */
 
 /* ----------------------------------------------------------
+   GALERIA DE FUNDO (BACKGROUND GALLERY)
+   Reutilizável em Banners e Seções
+   ---------------------------------------------------------- */
+.section-gallery-bg {
+  position: relative !important;
+  overflow: hidden !important;
+  background-color: transparent !important;
+}
+
+.section-gallery-bg .container {
+  position: relative;
+  z-index: 2;
+}
+
+.section-gallery-bg__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-hero);
+  opacity: 0.82;
+  z-index: 1;
+}
+
+.section-gallery-bg__container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bg-cycle-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-cycle-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.bg-cycle-layer--back {
+  opacity: 1;
+}
+
+/* ----------------------------------------------------------
    BOTÕES
    ---------------------------------------------------------- */
 .btn {

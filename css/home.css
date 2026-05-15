@@ -448,7 +448,7 @@
    ============================================================ */
 
 .section--carousel {
-  padding: var(--space-24) 0;
+  padding: var(--space-10) 0;
   background-color: var(--color-creme);
   overflow: hidden;
 }
