@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    TIA BETE BOLOS — Simulador de Encomenda (contato.js)
    ============================================================ */
 
@@ -198,6 +198,7 @@
 
     // Mostra resultado
     resultEl.hidden = false;
+    document.querySelector('.enc-layout').classList.add('is-calculated');
     resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
     // Monta mensagem do WhatsApp

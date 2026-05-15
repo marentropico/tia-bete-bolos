@@ -157,6 +157,11 @@
   overflow: hidden;
 }
 
+.pascoa-banner.section-gallery-bg .section-gallery-bg__overlay {
+  background: var(--gradient-pascoa);
+  opacity: 0.88;
+}
+
 .pascoa-banner__inner {
   display: flex;
   align-items: center;
