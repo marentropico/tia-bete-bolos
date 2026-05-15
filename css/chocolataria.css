@@ -166,22 +166,15 @@
   opacity: 0;
 }
 
-.choc-hero__egg-wrap {
-  position: relative;
-  width: 300px;
-  height: 300px;
+.choc-hero__img-real {
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  animation: float 6s ease-in-out infinite;
+  border: 1px solid rgba(212, 149, 90, 0.4);
 }
-
-.choc-hero__egg {
-  position: absolute;
-  font-size: 6rem;
-  animation: float 5s ease-in-out infinite;
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
-}
-
-.choc-hero__egg:nth-child(1) { top: 10px;  left: 50%;  transform: translateX(-50%); animation-delay: 0s; }
-.choc-hero__egg--2           { bottom: 20px; left: 0;   font-size: 4rem; animation-delay: 1.2s; }
-.choc-hero__egg--3           { bottom: 30px; right: 0;  font-size: 4rem; animation-delay: 2.4s; }
 
 /* Pílulas de navegação interna */
 .choc-hero__nav {
@@ -240,6 +233,59 @@
 .choc-section--dark {
   background-color: var(--choc-mid);
 }
+
+/* Seção com galeria de background */
+.choc-section--gallery-bg {
+  position: relative;
+  overflow: hidden;
+  /* Remove background sólido para deixar as fotos aparecerem */
+  background-color: transparent;
+}
+
+/* Container interno com z-index acima das imagens de fundo */
+.choc-section--gallery-bg .choc-section__inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* As duas camadas de imagem (técnica de true crossfade) */
+.choc-bg-gallery {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.choc-bg-gallery__layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.choc-bg-gallery__layer--back {
+  z-index: 1;
+  opacity: 1;
+}
+
+.choc-bg-gallery__layer--front {
+  z-index: 2;
+  opacity: 0;
+}
+
+/* Overlay: mantém o branco-rosado original mas semi-transparente para o fundo aparecer */
+.choc-bg-gallery__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: var(--color-creme);
+  opacity: 0.78; /* 78% opacidade = texto legível + fotos visíveis */
+  pointer-events: none;
+}
+
+
 
 .choc-section__header {
   max-width: 600px;
@@ -370,6 +416,18 @@
   animation: float 6s ease-in-out infinite;
 }
 
+.choc-flavor-card__img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto var(--space-4);
+  display: block;
+  animation: float 6s ease-in-out infinite;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  border: 3px solid var(--choc-gold);
+}
+
 .choc-flavor-card:nth-child(2) .choc-flavor-card__icon { animation-delay: 1s; }
 .choc-flavor-card:nth-child(3) .choc-flavor-card__icon { animation-delay: 2s; }
 
@@ -439,6 +497,16 @@
   align-items: flex-start;
   gap: var(--space-4);
   flex: 1;
+}
+
+.choc-outro-card__img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--color-creme-dark);
 }
 
 .choc-outro-card__emoji {
@@ -661,13 +729,9 @@
     order: -1;
   }
 
-  .choc-hero__egg-wrap {
-    width: 200px; height: 200px;
+  .choc-hero__img-real {
+    max-width: 340px;
   }
-
-  .choc-hero__egg { font-size: 4rem; }
-  .choc-hero__egg--2,
-  .choc-hero__egg--3 { font-size: 2.8rem; }
 
   .choc-flavors {
     grid-template-columns: 1fr;

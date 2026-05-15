@@ -62,11 +62,22 @@ document.addEventListener('DOMContentLoaded', async () => {
       // Monta o Link do WhatsApp
       const waUrl = `https://wa.me/5511972710172?text=${encodeURIComponent(p.waMsg)}`;
 
-      // A MÁGICA DA IMAGEM: Tenta carregar a imagem .webp. 
-      // Se falhar (onerror), troca a tag <img> pela div do Emoji instantaneamente!
-      const imgCaminho = `../assets/images/${p.cat}/${id}.webp`;
-      const fallbackHTML = `<div class='pcard__placeholder'><span class='pcard__placeholder-icon'>${p.emoji}</span></div>`;
-      const imgHTML = `<img src="${imgCaminho}" alt="${p.name}" class="pcard__img" loading="lazy" onerror="this.outerHTML=\`${fallbackHTML}\`" />`;
+      // A MÁGICA DA IMAGEM: Renderização dinâmica
+      // Se o produto tiver imageCount no JSON, ativamos o carrossel global
+      let imgHTML;
+      if (p.imageCount && p.imageCount > 1) {
+        const folder = `../assets/images/${p.cat}/${id}/`;
+        const initial = Math.floor(Math.random() * p.imageCount) + 1;
+        imgHTML = `
+          <div class="img-cycle-container" data-id="${id}" data-folder="${folder}" data-count="${p.imageCount}" data-current="${initial}">
+            <img src="${folder}${id}${initial}.webp" class="img-cycle-layer img-cycle-layer--back" alt="${p.name}" loading="lazy" />
+            <img src="${folder}${id}${initial}.webp" class="img-cycle-layer img-cycle-layer--front" alt="${p.name}" loading="lazy" />
+          </div>`;
+      } else {
+        const imgCaminho = `../assets/images/${p.cat}/${id}.webp`;
+        const fallbackHTML = `<div class='pcard__placeholder'><span class='pcard__placeholder-icon'>${p.emoji}</span></div>`;
+        imgHTML = `<img src="${imgCaminho}" alt="${p.name}" class="pcard__img" loading="lazy" onerror="this.outerHTML=\`${fallbackHTML}\`" />`;
+      }
 
       // Monta o Card
       const cardHTML = `
@@ -86,7 +97,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       grids[secaoId].insertAdjacentHTML('beforeend', cardHTML);
     });
 
+    // Inicia os carrosséis da página usando o módulo global
+    if (typeof window.initImageCrossfades === 'function') {
+      window.initImageCrossfades();
+    }
+
   } catch (erro) {
     console.error("Erro ao renderizar catálogo:", erro);
   }
-});
+});

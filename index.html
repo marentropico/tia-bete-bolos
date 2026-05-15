@@ -71,33 +71,6 @@
 
 
     <!-- ====================================================
-         SEÇÃO DE DESTAQUE — PÁSCOA
-         ==================================================== -->
-    <section class="section pascoa-banner" aria-label="Páscoa 2026">
-      <div class="container">
-        <div class="pascoa-banner__inner">
-          <div class="pascoa-banner__text">
-            <span class="section-label">Edição limitada</span>
-            <h2 class="section-title">
-              Páscoa <em>2026</em>
-            </h2>
-            <p class="section-subtitle">
-              Ovos de colher, bombons artesanais, trufas e muito mais.
-              Encomende com antecedência — vagas limitadas!
-            </p>
-            <a href="pages/chocolataria.html" class="btn btn--primary" style="margin-top: var(--space-8)">
-              Ver Catálogo de Páscoa
-            </a>
-          </div>
-          <div class="pascoa-banner__decoration" aria-hidden="true">
-            🥚🍫🐰
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ====================================================
          CARROSSEL DE CATEGORIAS
          ==================================================== -->
     <section class="section section--carousel" id="categorias" aria-label="Nossas categorias">
@@ -115,7 +88,7 @@
             <!-- ── PRINCIPAIS (primeiros 4 visíveis no desktop) ── -->
 
             <li class="swiper-slide">
-              <a href="pages/bolos.html" class="ccard" aria-label="Bolos artesanais">
+              <a href="pages/bolos.html" class="ccard" aria-label="Bolos artesanais" data-img-pool="bolos">
                 <div class="ccard__img-wrap">
                   <div class="ccard__placeholder">🎂</div>
                 </div>
@@ -127,7 +100,7 @@
             </li>
 
             <li class="swiper-slide">
-              <a href="pages/doces.html" class="ccard" aria-label="Doces e confeitaria">
+              <a href="pages/doces.html" class="ccard" aria-label="Doces e confeitaria" data-img-pool="doces">
                 <div class="ccard__img-wrap">
                   <div class="ccard__placeholder">🍬</div>
                 </div>
@@ -139,7 +112,7 @@
             </li>
 
             <li class="swiper-slide">
-              <a href="pages/salgados.html" class="ccard" aria-label="Salgados artesanais">
+              <a href="pages/salgados.html" class="ccard" aria-label="Salgados artesanais" data-img-pool="salgados">
                 <div class="ccard__img-wrap">
                   <div class="ccard__placeholder">🍗</div>
                 </div>
@@ -151,7 +124,7 @@
             </li>
 
             <li class="swiper-slide">
-              <a href="pages/chocolataria.html" class="ccard" aria-label="Chocolataria e Páscoa">
+              <a href="pages/chocolataria.html" class="ccard" aria-label="Chocolataria e Páscoa" data-img-pool="chocolataria">
                 <div class="ccard__img-wrap">
                   <div class="ccard__placeholder">🍫</div>
                   <span class="ccard__badge">Páscoa 2026</span>
@@ -180,7 +153,7 @@
             <!-- ── CHOCOLATARIA ── -->
 
             <li class="swiper-slide">
-              <a href="pages/chocolataria.html#ovos-tradicionais" class="ccard" aria-label="Ovos Tradicionais">
+              <a href="pages/chocolataria.html#ovos-tradicionais" class="ccard" aria-label="Ovos Tradicionais" data-img-pool="ovos-tradicionais">
                 <div class="ccard__img-wrap">
                   <div class="ccard__placeholder">🥚</div>
                 </div>
@@ -192,7 +165,7 @@
             </li>
 
             <li class="swiper-slide">
-              <a href="pages/chocolataria.html#ovos-recheados" class="ccard" aria-label="Ovos Recheados">
+              <a href="pages/chocolataria.html#ovos-recheados" class="ccard" aria-label="Ovos Recheados" data-img-pool="ovos-recheados">
                 <div class="ccard__img-wrap">
                   <div class="ccard__placeholder">🍫</div>
                 </div>
@@ -204,7 +177,7 @@
             </li>
 
             <li class="swiper-slide">
-              <a href="pages/chocolataria.html#outros-produtos" class="ccard" aria-label="Outros Produtos de Chocolataria">
+              <a href="pages/chocolataria.html#outros-produtos" class="ccard" aria-label="Outros Produtos de Chocolataria" data-img-pool="outros-chocolataria">
                 <div class="ccard__img-wrap">
                   <div class="ccard__placeholder">🎁</div>
                 </div>
@@ -227,6 +200,32 @@
 
         <!-- Swiper Pagination (mobile) -->
         <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================
+         SEÇÃO DE DESTAQUE — PÁSCOA
+         ==================================================== -->
+    <section class="section pascoa-banner" aria-label="Páscoa 2026">
+      <div class="container">
+        <div class="pascoa-banner__inner">
+          <div class="pascoa-banner__text">
+            <span class="section-label">Edição limitada</span>
+            <h2 class="section-title">
+              Páscoa <em>2026</em>
+            </h2>
+            <p class="section-subtitle">
+              Ovos de colher, bombons artesanais, trufas e muito mais.
+              Encomende com antecedência — vagas limitadas!
+            </p>
+            <a href="pages/chocolataria.html" class="btn btn--primary" style="margin-top: var(--space-8)">
+              Ver Catálogo de Páscoa
+            </a>
+          </div>
+          <div class="pascoa-banner__decoration" aria-hidden="true" data-img-pool="pascoa-banner">
+          </div>
+        </div>
       </div>
     </section>
 

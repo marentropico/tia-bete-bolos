@@ -136,3 +136,30 @@
     animation: none;
   }
 }
+
+/* True Crossfade para o Bolo Temático */
+.img-cycle-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.img-cycle-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.img-cycle-layer--back {
+  z-index: 1;
+}
+
+.img-cycle-layer--front {
+  z-index: 2;
+  opacity: 0;
+}

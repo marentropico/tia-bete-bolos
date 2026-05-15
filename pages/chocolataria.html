@@ -50,10 +50,9 @@
           </div>
         </div>
         <div class="choc-hero__visual" aria-hidden="true">
-          <div class="choc-hero__egg-wrap">
-            <div class="choc-hero__egg">🥚</div>
-            <div class="choc-hero__egg choc-hero__egg--2">🍫</div>
-            <div class="choc-hero__egg choc-hero__egg--3">🐰</div>
+          <div class="img-cycle-container choc-hero__img-real" data-folder="../assets/images/chocolataria/ovo-chocolate/" data-id="ovo-chocolate" data-count="3" data-current="1">
+            <img src="../assets/images/chocolataria/ovo-chocolate/ovo-chocolate1.webp" class="img-cycle-layer img-cycle-layer--back" alt="">
+            <img src="../assets/images/chocolataria/ovo-chocolate/ovo-chocolate1.webp" class="img-cycle-layer img-cycle-layer--front" alt="">
           </div>
         </div>
       </div>
@@ -75,8 +74,17 @@
     <!-- =====================================================
          SEÇÃO 1 — OVOS DE PÁSCOA TRADICIONAIS
          ===================================================== -->
-    <section class="choc-section" id="ovos-tradicionais" aria-labelledby="titulo-tradicionais">
-      <div class="container">
+    <section class="choc-section choc-section--gallery-bg" id="ovos-tradicionais" aria-labelledby="titulo-tradicionais">
+
+      <!-- Background Galeria: todas as imagens da chocolataria em crossfade -->
+      <div class="choc-bg-gallery" aria-hidden="true">
+        <img id="choc-bg-back" src="../assets/images/chocolataria/ovo-colher.webp" class="choc-bg-gallery__layer choc-bg-gallery__layer--back" alt="" />
+        <img id="choc-bg-front" src="../assets/images/chocolataria/ovo-colher.webp" class="choc-bg-gallery__layer choc-bg-gallery__layer--front" alt="" />
+      </div>
+      <!-- Overlay suave pra manter legibilidade -->
+      <div class="choc-bg-gallery__overlay" aria-hidden="true"></div>
+
+      <div class="container choc-section__inner">
 
         <div class="choc-section__header" data-reveal>
           <span class="section-label">Categoria 01</span>
@@ -161,6 +169,7 @@
     </section>
 
 
+
     <!-- =====================================================
          SEÇÃO 2 — OVOS RECHEADOS / COLHER
          ===================================================== -->
@@ -182,19 +191,19 @@
         <div class="choc-flavors" data-reveal data-reveal-delay="1">
 
           <div class="choc-flavor-card">
-            <div class="choc-flavor-card__icon">🍫</div>
+            <img src="../assets/images/chocolataria/ovo-colher-tradicional.webp" alt="Trufa Tradicional" class="choc-flavor-card__img" />
             <h3 class="choc-flavor-card__name">Trufa Tradicional</h3>
             <p class="choc-flavor-card__desc">Recheio intenso de trufa de chocolate, cremoso e aveludado</p>
           </div>
 
           <div class="choc-flavor-card">
-            <div class="choc-flavor-card__icon">🌼</div>
+            <img src="../assets/images/chocolataria/ovo-colher-maracuja.webp" alt="Maracujá" class="choc-flavor-card__img" />
             <h3 class="choc-flavor-card__name">Maracujá</h3>
             <p class="choc-flavor-card__desc">A acidez do maracujá equilibrando o doce do chocolate branco</p>
           </div>
 
           <div class="choc-flavor-card">
-            <div class="choc-flavor-card__icon">🍫</div>
+            <img src="../assets/images/chocolataria/ovo-colher-prestigio.webp" alt="Prestígio" class="choc-flavor-card__img" />
             <h3 class="choc-flavor-card__name">Prestígio</h3>
             <p class="choc-flavor-card__desc">Coco cremoso com chocolate ao leite, clássico e irresistível</p>
           </div>
@@ -239,8 +248,16 @@
     <!-- =====================================================
          SEÇÃO 3 — OUTROS PRODUTOS
          ===================================================== -->
-    <section class="choc-section" id="outros-produtos" aria-labelledby="titulo-outros">
-      <div class="container">
+    <section class="choc-section choc-section--gallery-bg" id="outros-produtos" aria-labelledby="titulo-outros">
+
+      <!-- Background Galeria -->
+      <div class="choc-bg-gallery" aria-hidden="true">
+        <img id="choc-bg3-back"  src="../assets/images/chocolataria/bombons.webp" class="choc-bg-gallery__layer choc-bg-gallery__layer--back" alt="" />
+        <img id="choc-bg3-front" src="../assets/images/chocolataria/bombons.webp" class="choc-bg-gallery__layer choc-bg-gallery__layer--front" alt="" />
+      </div>
+      <div class="choc-bg-gallery__overlay" aria-hidden="true"></div>
+
+      <div class="container choc-section__inner">
 
         <div class="choc-section__header" data-reveal>
           <span class="section-label">Categoria 03</span>
@@ -257,10 +274,10 @@
 
           <div class="choc-outro-card">
             <div class="choc-outro-card__top">
-              <span class="choc-outro-card__emoji">🎁</span>
+              <img src="../assets/images/chocolataria/caixa-bombons.webp" alt="Caixa de Bombom" class="choc-outro-card__img" />
               <div class="choc-outro-card__info">
                 <h3 class="choc-outro-card__name">Caixa de Bombom</h3>
-                <p class="choc-outro-card__desc">Seleção artesanal de bombons</p>
+                <p class="choc-outro-card__desc">Seleção artesanal de bombons finos</p>
               </div>
             </div>
             <div class="choc-outro-card__price">R$ 25,00</div>
@@ -270,10 +287,10 @@
 
           <div class="choc-outro-card">
             <div class="choc-outro-card__top">
-              <span class="choc-outro-card__emoji">🍬</span>
+              <img src="../assets/images/chocolataria/bombons.webp" alt="Trufas e Bombons" class="choc-outro-card__img" />
               <div class="choc-outro-card__info">
-                <h3 class="choc-outro-card__name">Trufa</h3>
-                <p class="choc-outro-card__desc">Trufa artesanal individual</p>
+                <h3 class="choc-outro-card__name">Trufas e Bombons</h3>
+                <p class="choc-outro-card__desc">Sabores variados e irresistíveis</p>
               </div>
             </div>
             <div class="choc-outro-card__price">R$ 6,00</div>
@@ -283,7 +300,7 @@
 
           <div class="choc-outro-card">
             <div class="choc-outro-card__top">
-              <span class="choc-outro-card__emoji">🍯</span>
+              <img src="../assets/images/chocolataria/pao-mel.webp" alt="Pão de Mel" class="choc-outro-card__img" />
               <div class="choc-outro-card__info">
                 <h3 class="choc-outro-card__name">Pão de Mel</h3>
                 <p class="choc-outro-card__desc">Pão de mel coberto com chocolate</p>
@@ -296,14 +313,27 @@
 
           <div class="choc-outro-card">
             <div class="choc-outro-card__top">
-              <span class="choc-outro-card__emoji">🍳</span>
+              <img src="../assets/images/chocolataria/alfajor.webp" alt="Alfajor Artesanal" class="choc-outro-card__img" />
               <div class="choc-outro-card__info">
-                <h3 class="choc-outro-card__name">Ovo Frito de Chocolate</h3>
-                <p class="choc-outro-card__desc">Delícia crocante de chocolate</p>
+                <h3 class="choc-outro-card__name">Alfajor Artesanal</h3>
+                <p class="choc-outro-card__desc">Massa macia com doce de leite e chocolate</p>
               </div>
             </div>
-            <div class="choc-outro-card__price">R$ 15,00</div>
-            <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20Ovo%20Frito%20de%20Chocolate!%20🍳"
+            <div class="choc-outro-card__price">R$ 10,00</div>
+            <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20Alfajor!%20🍪"
+               class="choc-outro-card__btn" target="_blank" rel="noopener noreferrer">Pedir</a>
+          </div>
+
+          <div class="choc-outro-card">
+            <div class="choc-outro-card__top">
+              <img src="../assets/images/chocolataria/barra-chocolate.webp" alt="Barra Recheada" class="choc-outro-card__img" />
+              <div class="choc-outro-card__info">
+                <h3 class="choc-outro-card__name">Barra Recheada</h3>
+                <p class="choc-outro-card__desc">Barra de chocolate artesanal com recheio cremoso</p>
+              </div>
+            </div>
+            <div class="choc-outro-card__price">R$ 35,00</div>
+            <a href="https://wa.me/5511972710172?text=Olá!%20Quero%20encomendar%20uma%20Barra%20Recheada!%20🍫"
                class="choc-outro-card__btn" target="_blank" rel="noopener noreferrer">Pedir</a>
           </div>
 
@@ -379,5 +409,74 @@
   <script src="../js/main.js"></script>
   <script src="../js/menu.js"></script>
   <script src="../js/whatsapp.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Inicializa o crossfade do hero
+      if (typeof window.initImageCrossfades === 'function') {
+        window.initImageCrossfades();
+      }
+
+      // -------------------------------------------------------
+      // BACKGROUND GALERIA — Todas as imagens da chocolataria
+      // Usa sorteio verdadeiramente aleatório: a cada troca,
+      // escolhe uma imagem diferente da atual (sem repetição imediata)
+      // -------------------------------------------------------
+      const BG_IMAGES = [
+        '../assets/images/chocolataria/alfajor.webp',
+        '../assets/images/chocolataria/barra-chocolate.webp',
+        '../assets/images/chocolataria/bombons.webp',
+        '../assets/images/chocolataria/bombons2.webp',
+        '../assets/images/chocolataria/bombons3.webp',
+        '../assets/images/chocolataria/caixa-bombons.webp',
+        '../assets/images/chocolataria/ovo-chocolate-branco.webp',
+        '../assets/images/chocolataria/ovo-chocolate-trufado.webp',
+        '../assets/images/chocolataria/ovo-colher-maracuja.webp',
+        '../assets/images/chocolataria/ovo-colher-prestigio.webp',
+        '../assets/images/chocolataria/ovo-colher-tradicional.webp',
+        '../assets/images/chocolataria/ovo-colher.webp',
+        '../assets/images/chocolataria/pao-mel.webp',
+      ];
+
+      // Função genérica: inicia o ciclo aleatório num par back/front
+      function initBgGallery(backId, frontId, intervalMs) {
+        const back  = document.getElementById(backId);
+        const front = document.getElementById(frontId);
+        if (!back || !front) return;
+
+        // Começa em uma imagem aleatória
+        let currentIdx = Math.floor(Math.random() * BG_IMAGES.length);
+        back.src  = BG_IMAGES[currentIdx];
+        front.src = BG_IMAGES[currentIdx];
+
+        setInterval(() => {
+          // Sorteia próxima imagem diferente da atual (sem repetição imediata)
+          let nextIdx;
+          do {
+            nextIdx = Math.floor(Math.random() * BG_IMAGES.length);
+          } while (nextIdx === currentIdx);
+          currentIdx = nextIdx;
+
+          // Pré-carrega e faz fade in
+          front.src = BG_IMAGES[currentIdx];
+          front.onload = () => {
+            front.style.opacity = 1;
+            // Após o fade, atualiza back e reseta front instantaneamente
+            setTimeout(() => {
+              back.src = BG_IMAGES[currentIdx];
+              front.style.transition = 'none';
+              front.style.opacity = 0;
+              setTimeout(() => { front.style.transition = ''; }, 50);
+            }, 1300);
+          };
+        }, intervalMs);
+      }
+
+      // Seção 1 — Ovos Tradicionais (5s, começa desfasado)
+      initBgGallery('choc-bg-back',  'choc-bg-front',  5000);
+
+      // Seção 3 — Outros Produtos (6s, ritmo diferente pra não sincronizar)
+      initBgGallery('choc-bg3-back', 'choc-bg3-front', 6000);
+    });
+  </script>
 </body>
 </html>

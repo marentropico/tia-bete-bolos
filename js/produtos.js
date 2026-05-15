@@ -44,16 +44,34 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.querySelector('meta[name="description"]').content = `${produto.name} — ${produto.desc.slice(0, 120)}...`;
     // Imagem com fallback para emoji
     const imgWrap = document.getElementById('product-img-wrap');
-    const imagePath = `../assets/images/${produto.cat}/${id}.webp`;
+    
+    if (produto.imageCount && produto.imageCount > 1) {
+      const folder = `../assets/images/${produto.cat}/${id}/`;
+      const initial = Math.floor(Math.random() * produto.imageCount) + 1;
+      imgWrap.innerHTML = `
+        <div class="img-cycle-container" data-id="${id}" data-folder="${folder}" data-count="${produto.imageCount}" data-current="${initial}">
+          <img src="${folder}${id}${initial}.webp" class="img-cycle-layer img-cycle-layer--back" alt="${produto.name}" />
+          <img src="${folder}${id}${initial}.webp" class="img-cycle-layer img-cycle-layer--front" alt="${produto.name}" />
+        </div>
+      `;
 
-    imgWrap.innerHTML = `
-      <img 
-        src="${imagePath}" 
-        alt="${produto.name}" 
-        class="product-detail__img" 
-        onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'product-detail__img-placeholder\\'><span>${produto.emoji}</span></div>';"
-      />
-    `;
+      // Inicia o CROSSFADE REAL através do módulo global
+      if (typeof window.initImageCrossfades === 'function') {
+        // Um pequeno delay para garantir que o DOM processou o innerHTML
+        setTimeout(window.initImageCrossfades, 50);
+      }
+
+    } else {
+      const imagePath = `../assets/images/${produto.cat}/${id}.webp`;
+      imgWrap.innerHTML = `
+        <img 
+          src="${imagePath}" 
+          alt="${produto.name}" 
+          class="product-detail__img" 
+          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'product-detail__img-placeholder\\'><span>${produto.emoji}</span></div>';"
+        />
+      `;
+    }
     document.getElementById('product-category').textContent = produto.catLabel;
     document.getElementById('product-title').textContent = produto.name;
     document.getElementById('product-desc').textContent  = produto.desc;

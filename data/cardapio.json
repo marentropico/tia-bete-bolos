@@ -141,7 +141,8 @@
     "emoji": "🦄",
     "name": "Bolo Temático Personalizado",
     "desc": "Personagens, estilos, cores — qualquer tema vira arte nas mãos da Tia Bete. Entre em contato e conte o que está imaginando!",
-    "waMsg": "Olá! Quero encomendar um Bolo Temático Personalizado! Pode me contar como funciona?"
+    "waMsg": "Olá! Quero encomendar um Bolo Temático Personalizado! Pode me contar como funciona?",
+    "imageCount": 16
   },
   "brigadeiro": {
     "cat": "doces",
@@ -150,6 +151,24 @@
     "name": "Brigadeiro Gourmet",
     "desc": "O queridinho das festas elevado ao nível gourmet. Chocolate belga, leite condensado de qualidade e confeitos especiais. Disponível em vários sabores.",
     "waMsg": "Olá! Quero encomendar Brigadeiros Gourmet!"
+  },
+  "bem-casado": {
+    "cat": "doces",
+    "catLabel": "Tradicionais de Festa",
+    "emoji": "💒",
+    "name": "Bem-Casado",
+    "desc": "O doce indispensável para celebrar uniões e momentos inesquecíveis. Massa pão de ló levinha com recheio de doce de leite artesanal.",
+    "waMsg": "Olá! Quero encomendar Bem-Casados!",
+    "imageCount": 2
+  },
+  "cento-doce": {
+    "cat": "doces",
+    "catLabel": "Tradicionais de Festa",
+    "emoji": "🍬",
+    "name": "Cento de Doces Variados",
+    "desc": "A alegria de qualquer festa! Escolha seus sabores favoritos entre brigadeiro, beijinho, cajuzinho e muito mais. Vendido por cento.",
+    "waMsg": "Olá! Quero consultar o preço do Cento de Doces!",
+    "imageCount": 5
   },
   "quindim": {
     "cat": "doces",
@@ -181,7 +200,8 @@
     "emoji": "🥜",
     "name": "Cajuzinho de Amendoim",
     "desc": "O cajuzinho de festa que todo mundo ama! Amendoim moído com açúcar e chocolate, modelado no formato do fruto. Nostálgico e irresistível.",
-    "waMsg": "Olá! Quero encomendar Cajuzinhos de Amendoim!"
+    "waMsg": "Olá! Quero encomendar Cajuzinhos de Amendoim!",
+    "imageCount": 2
   },
   "torta-holandesa": {
     "cat": "doces",
@@ -189,7 +209,8 @@
     "emoji": "🥧",
     "name": "Torta Holandesa",
     "desc": "Camadas generosas de creme de chocolate com biscoito, sem precisar ir ao forno. Gelada, cremosa e irresistível. Uma das favoritas da casa.",
-    "waMsg": "Olá! Quero encomendar uma Torta Holandesa!"
+    "waMsg": "Olá! Quero encomendar uma Torta Holandesa!",
+    "imageCount": 2
   },
   "mousse-maracuja": {
     "cat": "doces",
@@ -231,6 +252,15 @@
     "desc": "Mix de frutas frescas da estação sobre creme e massa artesanal. Colorida, refrescante e linda para presentear ou servir em datas especiais.",
     "waMsg": "Olá! Quero encomendar uma Torta de Frutas!"
   },
+  "torta-limao": {
+    "cat": "doces",
+    "catLabel": "Tortas & Mousses",
+    "emoji": "🍋",
+    "name": "Torta de Limão",
+    "desc": "Base crocante, recheio cremoso de limão siciliano e cobertura de merengue suíço. O equilíbrio perfeito entre o doce e o cítrico.",
+    "waMsg": "Olá! Quero encomendar uma Torta de Limão!",
+    "imageCount": 2
+  },
   "maca-amor": {
     "cat": "doces",
     "catLabel": "Caramelizados",
@@ -245,7 +275,8 @@
     "emoji": "🍓",
     "name": "Morango do Amor",
     "desc": "A versão sofisticada da maçã do amor: morangos frescos mergulhados em calda crocante de caramelo. Lindo, delicioso e irresistível.",
-    "waMsg": "Olá! Quero encomendar Morangos do Amor!"
+    "waMsg": "Olá! Quero encomendar Morangos do Amor!",
+    "imageCount": 5
   },
   "carolina": {
     "cat": "doces",
@@ -255,13 +286,22 @@
     "desc": "Casquinha crocante de massa choux recheada com creme de confeiteiro artesanal. Leve por fora, cremosa por dentro — uma delícia refinada.",
     "waMsg": "Olá! Quero encomendar Carolinas!"
   },
+  "bolinho": {
+    "cat": "doces",
+    "catLabel": "Assados Recheados",
+    "emoji": "🧁",
+    "name": "Cupcake Decorado",
+    "desc": "Mini bolinhos fofinhos com coberturas generosas e decorações artesanais. Perfeitos para lembrancinhas ou mesas de doces.",
+    "waMsg": "Olá! Quero encomendar Cupcakes!"
+  },
   "bomba-chocolate": {
     "cat": "doces",
     "catLabel": "Assados Recheados",
     "emoji": "🍩",
     "name": "Bomba de Chocolate",
     "desc": "Massa choux alongada, recheada com creme e coberta com ganache de chocolate. A versão brasileira do éclair francês — impossível resistir.",
-    "waMsg": "Olá! Quero encomendar Bombas de Chocolate!"
+    "waMsg": "Olá! Quero encomendar Bombas de Chocolate!",
+    "imageCount": 2
   },
   "coxinha-mini": {
     "cat": "salgados",
